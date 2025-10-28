@@ -1,0 +1,21 @@
+{
+  "item.sculkevolution.bladed_hook": "Bladed Hook",
+  "item.sculkevolution.sickle": "Sickle",
+  "item.sculkevolution.warden_key": "Warden Key",
+
+  "block.sculkevolution.bladed_hook": "Bladed Hook",
+  "block.sculkevolution.echo_vault": "Echo Vault",
+
+  "enchantment.sculkevolution.echo_chamber": "Echo Chamber",
+  "enchantment.sculkevolution.echo_chamber.desc": "Releases a sonic boom at the cost of all the sculk built up by the sickle.",
+  "enchantment.sculkevolution.repulse": "Repulse",
+  "enchantment.sculkevolution.repulse.desc": "Unleashes a small shockwave when the sickle loses all of its sculk.",
+  "enchantment.sculkevolution.soul_lunge": "Soul Lunge",
+  "enchantment.sculkevolution.soul_lunge.desc": "Uses a small amount of the sickle's built up sculk to dash foward.",
+
+  "subtitle.sculkevolution.sickle.grow": "Sickle builds up sculk",
+  "subtitle.sculkevolution.sickle.reset": "Sickle sculk dissipates",
+
+  "subtitle.sculkevolution.sickle.sonic_charge": "Sickle charges",
+  "subtitle.sculkevolution.sickle.sonic_boom": "Sickle booms"
+}

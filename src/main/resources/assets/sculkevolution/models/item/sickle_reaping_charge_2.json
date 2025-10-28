@@ -1,0 +1,6 @@
+{
+  "parent": "sculkevolution:item/sickle_reaping",
+  "textures": {
+    "layer0": "sculkevolution:item/sickle_charge_2"
+  }
+}

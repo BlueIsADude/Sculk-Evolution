@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,hanging=false": {
+      "model": "sculkevolution:block/bladed_hook",
+      "y": 270
+    },
+    "facing=east,hanging=true": {
+      "model": "sculkevolution:block/bladed_hook_hanging",
+      "y": 270
+    },
+    "facing=north,hanging=false": {
+      "model": "sculkevolution:block/bladed_hook",
+      "y": 180
+    },
+    "facing=north,hanging=true": {
+      "model": "sculkevolution:block/bladed_hook_hanging",
+      "y": 180
+    },
+    "facing=south,hanging=false": {
+      "model": "sculkevolution:block/bladed_hook"
+    },
+    "facing=south,hanging=true": {
+      "model": "sculkevolution:block/bladed_hook_hanging"
+    },
+    "facing=west,hanging=false": {
+      "model": "sculkevolution:block/bladed_hook",
+      "y": 90
+    },
+    "facing=west,hanging=true": {
+      "model": "sculkevolution:block/bladed_hook_hanging",
+      "y": 90
+    }
+  }
+}

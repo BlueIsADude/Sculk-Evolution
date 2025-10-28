@@ -1,0 +1,6 @@
+{
+  "parent": "sculkevolution:item/sickle",
+  "textures": {
+    "layer0": "sculkevolution:item/sickle_charge_2"
+  }
+}

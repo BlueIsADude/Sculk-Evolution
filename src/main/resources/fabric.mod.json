@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "sculkevolution",
+  "version": "${version}",
+  "name": "Sculk Evolution",
+  "description": "Adds more uses for Sculk and Echo Shards",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/sculkevolution/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "net.bluethedude.sculkevolution.SculkEvolutionDataGenerator"
+    ],
+    "client": [
+      "net.bluethedude.sculkevolution.SculkEvolutionClient"
+    ],
+    "main": [
+      "net.bluethedude.sculkevolution.SculkEvolution"
+    ]
+  },
+  "mixins": [
+    "sculkevolution.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

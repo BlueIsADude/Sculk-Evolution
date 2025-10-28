@@ -1,0 +1,78 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "sculkevolution:item/sickle"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ 0, -90, 55 ],
+      "translation": [ 0, 4.0, 1 ],
+      "scale": [ 1, 1, 1 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 0, 90, -55 ],
+      "translation": [ 0, 4.0, 1 ],
+      "scale": [ 1, 1, 1 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, -90, 25 ],
+      "translation": [ 0, 3, 0.8 ],
+      "scale": [ 0.9, 0.9, 0.9 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ 0, 90, -25 ],
+      "translation": [ 0, 3, 0.8 ],
+      "scale": [ 0.9, 0.9, 0.9 ]
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "sculkevolution:reaping": 0,
+        "sculkevolution:charged": 0.3
+      },
+      "model": "sculkevolution:item/sickle_charge_1"
+    },
+    {
+      "predicate": {
+        "sculkevolution:reaping": 0,
+        "sculkevolution:charged": 0.6
+      },
+      "model": "sculkevolution:item/sickle_charge_2"
+    },
+    {
+      "predicate": {
+        "sculkevolution:reaping": 0,
+        "sculkevolution:charged": 0.9
+      },
+      "model": "sculkevolution:item/sickle_charge_3"
+    },
+    {
+      "predicate": {
+        "sculkevolution:reaping": 1
+      },
+      "model": "sculkevolution:item/sickle_reaping"
+    },
+    {
+      "predicate": {
+        "sculkevolution:reaping": 1,
+        "sculkevolution:charged": 0.3
+      },
+      "model": "sculkevolution:item/sickle_reaping_charge_1"
+    },
+    {
+      "predicate": {
+        "sculkevolution:reaping": 1,
+        "sculkevolution:charged": 0.6
+      },
+      "model": "sculkevolution:item/sickle_reaping_charge_2"
+    },
+    {
+      "predicate": {
+        "sculkevolution:reaping": 1,
+        "sculkevolution:charged": 0.9
+      },
+      "model": "sculkevolution:item/sickle_reaping_charge_3"
+    }
+  ]
+}

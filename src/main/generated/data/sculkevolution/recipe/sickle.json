@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "sculkevolution:bladed_hook"
+    },
+    "O": {
+      "item": "minecraft:echo_shard"
+    },
+    "X": {
+      "item": "minecraft:bone"
+    }
+  },
+  "pattern": [
+    "#",
+    "X",
+    "O"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculkevolution:sickle"
+  }
+}
