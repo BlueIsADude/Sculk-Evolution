@@ -1,4 +1,4 @@
-Sculk Evolution is a mod that adds more uses to sculk and echo shards! Currently, it only adds 2 new items and 1 new enchantment, but eventually it will have much more.
+Sculk Evolution is a mod that adds more uses to sculk and echo shards! Currently, it only adds 2 new items and 3 new enchantments, but it will eventually add more.
 
 
 <details>
@@ -21,21 +21,20 @@ Soul Lunge: Only has 1 level, and currently can only be found in enchantment tab
 <details>
 <summary>Planned Features</summary>
 
+Note: Features listed here are subject to change, and might not be in the final mod.
+
 ## Vanilla Changes
-Umbra Keys will be added to Deep Dark chests, and may also be added to the Warden's loot on death.
+Umbra Keys will be added to Ancient City chests, and may also be added to the Warden's loot on death.
 
 ## Feature Changes
-The Bladed Hook may gain the ability to store a stack of any food item, being able to display it on the hook. It will also be removed from ice box chests, instead being moved into the Echo Vault.
-The Echo Chamber enchantment will also be moved from the enchantment table to the Echo Vault.
+The Bladed Hook may gain the ability to store a stack of any food item, being able to display it on the hook. It will also be removed from ice box chests, and instead be moved to the Umbra Vault.
+All 3 sickle enchantments will also be moved from the enchantment table to the Umbra Vault.
 
 ## Umbra Vault
-The Umbra Vault is a new block very similar to both the vaults and the spawners in trial chambers, but uses Umbra Keys instead of Trial Keys. When a key is used on the vault, instead of dispensing items right away, it will spawn a few sculk-themed enemies around itself. When they're all slain, it will then proceed to dispense the items and become permanently unusable for the player that used the key, similar to regular vaults.
-
-## Skeleton Key
-The Skeleton Key is a new unique key item that, when used on vaults, will reset them, allowing them to be used again. This may only be added for debug purposes and might not be craftable, but could be added to survival via datapacks.
+The Umbra Vault is a new block very similar to both the vaults and the spawners in trial chambers, but uses Umbra Keys instead of Trial Keys. When a key is used on the vault, instead of dispensing items right away, it will spawn a few sculk-themed enemies around itself. When they're all slain, it will then proceed to dispense the items and become permanently unusable for the player that used the key, identically to regular vaults.
 
 ## Altars
-Altars are a new structure found in the Deep Dark. They are relatively small, being comparable to desert wells, but they have Umbra Vaults at the center. They will also have Suspicious Sculk around them, which behaves identically to suspicious sand and gravel.
+Altars are a new structure found in the Deep Dark. They are relatively small, being comparable to desert wells, but they're the only place you will be able to find Umbra Vaults, which will be directly in the middle of the structure. They may also have Suspicious Sculk around them, which behaves identically to suspicious sand and gravel.
 
 ## Budding Sculk Catalyst
 The Budding Sculk Catalyst is crafted with a Sculk Catalyst and 4 Echo Shards surrounding it. Instead of spreading sculk when a mob dies, it will instead slowly grow Echo Shards on top of itself, growing by 1 level every time a mob is slain. If the echo shards are fully grown, it will stop absorbing mob xp.
