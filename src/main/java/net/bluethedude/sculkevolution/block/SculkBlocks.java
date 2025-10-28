@@ -19,10 +19,12 @@ public class SculkBlocks {
     public static final Block BLADED_HOOK = registerItemlessBlock("bladed_hook",
             new BladedHookBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.IRON_GRAY)
+                    .solid()
                     .instrument(NoteBlockInstrument.SNARE)
                     .sounds(BlockSoundGroup.COPPER)
                     .strength(10.0F, 1200.0F)
-                    .pistonBehavior(PistonBehavior.NORMAL)
+                    .nonOpaque()
+                    .pistonBehavior(PistonBehavior.DESTROY)
             )
     );
 
