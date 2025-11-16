@@ -3,8 +3,8 @@ package net.bluethedude.sculkevolution.item.custom;
 import net.bluethedude.sculkevolution.enchantment.SculkEnchantments;
 import net.bluethedude.sculkevolution.sound.SculkSoundEvents;
 import net.bluethedude.sculkevolution.util.SculkDataComponents;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.AttributeModifiersComponent;
 import net.minecraft.component.type.ToolComponent;
@@ -17,9 +17,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.tag.BlockTags;
@@ -40,14 +38,15 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-public class SickleItem extends Item {
+public class SickleItem extends SwordItem {
 
     private boolean sculkLunging;
     private int sculkLungeTicks;
 
-    public SickleItem(Settings settings) {
-        super(settings);
+    public SickleItem(ToolMaterial material, Settings settings) {
+        super(material, settings.component(DataComponentTypes.TOOL, material.createComponent(BlockTags.HOE_MINEABLE)));
     }
+
 
     public int getSculkCharge(ItemStack stack) {
         if (stack.contains(SculkDataComponents.SCULK_CHARGE)) {
@@ -61,16 +60,16 @@ public class SickleItem extends Item {
         stack.set(SculkDataComponents.SCULK_CHARGE, sculkCharge);
     }
 
-    public static AttributeModifiersComponent createAttributeModifiers() {
+    public static AttributeModifiersComponent createAttributeModifiers(ToolMaterial material, float baseAttackDamage, float attackSpeed) {
         return AttributeModifiersComponent.builder()
                 .add(
                         EntityAttributes.GENERIC_ATTACK_DAMAGE,
-                        new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, 0.0F, EntityAttributeModifier.Operation.ADD_VALUE),
+                        new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, baseAttackDamage + material.getAttackDamage(), EntityAttributeModifier.Operation.ADD_VALUE),
                         AttributeModifierSlot.MAINHAND
                 )
                 .add(
                         EntityAttributes.GENERIC_ATTACK_SPEED,
-                        new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, -1.0F, EntityAttributeModifier.Operation.ADD_VALUE),
+                        new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, attackSpeed, EntityAttributeModifier.Operation.ADD_VALUE),
                         AttributeModifierSlot.MAINHAND
                 )
                 .build();
@@ -79,13 +78,8 @@ public class SickleItem extends Item {
     public static ToolComponent createToolComponent() {
         return new ToolComponent(List.of(
                 ToolComponent.Rule.ofAlwaysDropping(List.of(Blocks.COBWEB), 15.0F),
-                ToolComponent.Rule.of(BlockTags.SWORD_EFFICIENT, 5.0F),
-                ToolComponent.Rule.ofAlwaysDropping(BlockTags.HOE_MINEABLE, 6.0F)), 1.0F, 1);
-    }
-
-    @Override
-    public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
-        return !miner.isCreative();
+                ToolComponent.Rule.of(BlockTags.SWORD_EFFICIENT, 5.0F)
+        ), 1.0F, 1);
     }
 
     @Override

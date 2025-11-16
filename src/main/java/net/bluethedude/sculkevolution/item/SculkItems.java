@@ -23,11 +23,10 @@ public class SculkItems {
     );
 
     public static final Item SICKLE = registerItem("sickle",
-            new SickleItem(new Item.Settings()
+            new SickleItem(SculkToolMaterials.ECHO_SHARD, new Item.Settings()
                     .rarity(Rarity.EPIC)
-                    .maxDamage(250)
                     .component(DataComponentTypes.TOOL, SickleItem.createToolComponent())
-                    .attributeModifiers(SickleItem.createAttributeModifiers())
+                    .attributeModifiers(SickleItem.createAttributeModifiers(SculkToolMaterials.ECHO_SHARD, -2.0F, -1.0F))
             )
     );
 
