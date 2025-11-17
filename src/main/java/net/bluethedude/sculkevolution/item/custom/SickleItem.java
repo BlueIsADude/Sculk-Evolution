@@ -127,7 +127,7 @@ public class SickleItem extends SwordItem {
                 user.setVelocity(
                         userVelocity.add(
                                 userRotation.x * 0.1 + (userRotation.x * 2.5 - userVelocity.x) * 0.5,
-                                0.1,
+                                userRotation.y * 0.1 + (userRotation.y * 2.5 - userVelocity.y) * 0.5,
                                 userRotation.z * 0.1 + (userRotation.z * 2.5 - userVelocity.z) * 0.5
                         )
                 );
