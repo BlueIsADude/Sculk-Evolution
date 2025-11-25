@@ -31,10 +31,10 @@ The Bladed Hook may gain the ability to store a stack of any food item, being ab
 All 3 sickle enchantments will also be moved from the enchantment table to the Umbra Vault.
 
 ## Umbra Vault
-The Umbra Vault is a new block very similar to both the vaults and the spawners in trial chambers, but uses Umbra Keys instead of Trial Keys. When a key is used on the vault, instead of dispensing items right away, it will spawn a few sculk-themed enemies around itself. When they're all slain, it will then proceed to dispense the items and become permanently unusable for the player that used the key, identically to regular vaults.
+The Umbra Vault is a new block essentially acts like a Trial Spawner, but requires a special key much like Vaults. When an Umbra Key is used on the vault, it will spawn a few sculk-themed enemies around itself. When they're all slain, it will then proceed to dispense the items and become permanently unusable for the player that used the key, identically to regular vaults.
 
 ## Altars
-Altars are a new structure found in the Deep Dark. They are relatively small, being comparable to desert wells, but they're the only place you will be able to find Umbra Vaults, which will be directly in the middle of the structure. They may also have Suspicious Sculk around them, which behaves identically to suspicious sand and gravel.
+Altars are a new structure found in the Deep Dark. They are relatively small, being only slightly bigger than desert wells, but they're the only place you will be able to find Umbra Vaults, which will be directly in the middle of the structure.
 
 ## Budding Sculk Catalyst
 The Budding Sculk Catalyst is crafted with a Sculk Catalyst and 4 Echo Shards surrounding it. Instead of spreading sculk when a mob dies, it will instead slowly grow Echo Shards on top of itself, growing by 1 level every time a mob is slain. If the echo shards are fully grown, it will stop absorbing mob xp.
