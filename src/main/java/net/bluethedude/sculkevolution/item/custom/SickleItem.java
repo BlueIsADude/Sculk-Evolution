@@ -1,5 +1,6 @@
 package net.bluethedude.sculkevolution.item.custom;
 
+import net.bluethedude.sculkevolution.SculkEvolution;
 import net.bluethedude.sculkevolution.enchantment.SculkEnchantments;
 import net.bluethedude.sculkevolution.sound.SculkSoundEvents;
 import net.bluethedude.sculkevolution.util.SculkDataComponents;
@@ -38,10 +39,11 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-public class SickleItem extends SwordItem {
+public class SickleItem extends SwordItem implements PreHitItem {
 
     private boolean sculkLunging;
     private int sculkLungeTicks;
+    private float attackCooldownProgress;
 
     public SickleItem(ToolMaterial material, Settings settings) {
         super(material, settings.component(DataComponentTypes.TOOL, material.createComponent(BlockTags.HOE_MINEABLE)));
@@ -266,11 +268,18 @@ public class SickleItem extends SwordItem {
     }
 
     @Override
+    public void sculk_Evolution$preHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        if (attacker instanceof PlayerEntity user) {
+            this.attackCooldownProgress = user.getAttackCooldownProgress(0);
+        }
+    }
+
+    @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         World world = attacker.getWorld();
         if (attacker instanceof PlayerEntity user && !user.getItemCooldownManager().isCoolingDown(this)) {
             if (getSculkCharge(stack) < 9) {
-                if (!world.isClient) {
+                if (this.attackCooldownProgress >= 1 && !world.isClient) {
                     setSculkCharge(stack, getSculkCharge(stack) + 1);
                 }
                 if (getSculkCharge(stack) == 3 || getSculkCharge(stack) == 6 || getSculkCharge(stack) == 9) {

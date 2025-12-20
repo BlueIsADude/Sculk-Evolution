@@ -4,6 +4,8 @@
   "package": "net.bluethedude.sculkevolution.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "ItemMixin",
+    "PlayerEntityMixin"
   ],
   "client": [
   ],
