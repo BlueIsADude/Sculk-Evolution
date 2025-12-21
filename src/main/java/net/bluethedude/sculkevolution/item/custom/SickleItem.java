@@ -1,6 +1,5 @@
 package net.bluethedude.sculkevolution.item.custom;
 
-import net.bluethedude.sculkevolution.SculkEvolution;
 import net.bluethedude.sculkevolution.enchantment.SculkEnchantments;
 import net.bluethedude.sculkevolution.sound.SculkSoundEvents;
 import net.bluethedude.sculkevolution.util.SculkDataComponents;
@@ -113,7 +112,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
                         user.getX(),
                         user.getY(),
                         user.getZ(),
-                        SculkSoundEvents.SICKLE_SONIC_CHARGE,
+                        SculkSoundEvents.ITEM_SICKLE_SONIC_CHARGE,
                         SoundCategory.PLAYERS,
                         3.0F,
                         1.0F
@@ -138,7 +137,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
                         user.getX(),
                         user.getY(),
                         user.getZ(),
-                        SculkSoundEvents.SICKLE_SONIC_BOOM,
+                        SculkSoundEvents.ITEM_SICKLE_SONIC_BOOM,
                         SoundCategory.PLAYERS,
                         3.0F,
                         3.0F
@@ -212,7 +211,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
                             livingEntity.getX(),
                             livingEntity.getY(),
                             livingEntity.getZ(),
-                            SculkSoundEvents.SICKLE_RESET,
+                            SculkSoundEvents.ITEM_SICKLE_RESET,
                             SoundCategory.PLAYERS,
                             1.5F,
                             1.25F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
@@ -247,7 +246,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
                                     user.getX(),
                                     user.getY(),
                                     user.getZ(),
-                                    SculkSoundEvents.SICKLE_SONIC_BOOM,
+                                    SculkSoundEvents.ITEM_SICKLE_SONIC_BOOM,
                                     SoundCategory.PLAYERS,
                                     3.0F,
                                     3.0F
@@ -268,7 +267,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
     }
 
     @Override
-    public void sculk_Evolution$preHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+    public void sculk_evolution$preHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (attacker instanceof PlayerEntity user) {
             this.attackCooldownProgress = user.getAttackCooldownProgress(0);
         }
@@ -278,8 +277,8 @@ public class SickleItem extends SwordItem implements PreHitItem {
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         World world = attacker.getWorld();
         if (attacker instanceof PlayerEntity user && !user.getItemCooldownManager().isCoolingDown(this)) {
-            if (getSculkCharge(stack) < 9) {
-                if (this.attackCooldownProgress >= 1 && !world.isClient) {
+            if (this.attackCooldownProgress >= 1 && getSculkCharge(stack) < 9) {
+                if (!world.isClient) {
                     setSculkCharge(stack, getSculkCharge(stack) + 1);
                 }
                 if (getSculkCharge(stack) == 3 || getSculkCharge(stack) == 6 || getSculkCharge(stack) == 9) {
@@ -288,7 +287,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
                             attacker.getX(),
                             attacker.getY(),
                             attacker.getZ(),
-                            SculkSoundEvents.SICKLE_GROW_LARGE,
+                            SculkSoundEvents.ITEM_SICKLE_GROW_LARGE,
                             SoundCategory.PLAYERS,
                             1.0F,
                             1.25F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
@@ -299,7 +298,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
                             attacker.getX(),
                             attacker.getY(),
                             attacker.getZ(),
-                            SculkSoundEvents.SICKLE_GROW_SMALL,
+                            SculkSoundEvents.ITEM_SICKLE_GROW_SMALL,
                             SoundCategory.PLAYERS,
                             5.0F,
                             1.25F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
@@ -326,7 +325,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
     }
 
     private void spawnSonicBoom(ItemStack stack, World world, LivingEntity user) {
-        world.playSound(null, user.getX(), user.getY(), user.getZ(), SculkSoundEvents.SICKLE_SONIC_BOOM, SoundCategory.PLAYERS, 3.0f, 1.0f);
+        world.playSound(null, user.getX(), user.getY(), user.getZ(), SculkSoundEvents.ITEM_SICKLE_SONIC_BOOM, SoundCategory.PLAYERS, 3.0f, 1.0f);
 
         float heightOffset = user.getStandingEyeHeight();
         int distance = 8;

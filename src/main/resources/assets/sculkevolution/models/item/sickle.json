@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "sculkevolution:item/sickle"
+    "layer0": "sculkevolution:item/sickle/sickle"
   },
   "display": {
     "thirdperson_righthand": {
