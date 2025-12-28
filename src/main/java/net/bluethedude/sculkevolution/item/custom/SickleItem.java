@@ -161,14 +161,14 @@ public class SickleItem extends SwordItem implements PreHitItem {
                     spawnSonicBoom(stack, world, user);
                 }
                 if (getSculkCharge(stack) >= 9) {
-                    playerEntity.getItemCooldownManager().set(this, 128);
-                    stack.damage(15, playerEntity, EquipmentSlot.MAINHAND);
-                } else if (getSculkCharge(stack) >= 6) {
-                    playerEntity.getItemCooldownManager().set(this, 112);
+                    playerEntity.getItemCooldownManager().set(this, 64);
                     stack.damage(10, playerEntity, EquipmentSlot.MAINHAND);
-                } else {
-                    playerEntity.getItemCooldownManager().set(this, 96);
+                } else if (getSculkCharge(stack) >= 6) {
+                    playerEntity.getItemCooldownManager().set(this, 48);
                     stack.damage(5, playerEntity, EquipmentSlot.MAINHAND);
+                } else {
+                    playerEntity.getItemCooldownManager().set(this, 32);
+                    stack.damage(1, playerEntity, EquipmentSlot.MAINHAND);
                 }
                 setSculkCharge(stack, 0);
                 playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
@@ -269,7 +269,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
     @Override
     public void sculk_evolution$preHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (attacker instanceof PlayerEntity user) {
-            this.attackCooldownProgress = user.getAttackCooldownProgress(0);
+            this.attackCooldownProgress = user.getAttackCooldownProgress(0.5F);
         }
     }
 
@@ -277,7 +277,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         World world = attacker.getWorld();
         if (attacker instanceof PlayerEntity user && !user.getItemCooldownManager().isCoolingDown(this)) {
-            if (this.attackCooldownProgress >= 1 && getSculkCharge(stack) < 9) {
+            if (this.attackCooldownProgress >= 0.9F && getSculkCharge(stack) < 9) {
                 if (!world.isClient) {
                     setSculkCharge(stack, getSculkCharge(stack) + 1);
                 }
