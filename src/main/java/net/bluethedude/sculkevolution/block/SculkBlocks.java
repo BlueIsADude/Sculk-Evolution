@@ -2,9 +2,8 @@ package net.bluethedude.sculkevolution.block;
 
 import net.bluethedude.sculkevolution.SculkEvolution;
 import net.bluethedude.sculkevolution.block.custom.BladedHookBlock;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.MapColor;
+import net.bluethedude.sculkevolution.block.custom.UmbraVaultBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
@@ -25,6 +24,17 @@ public class SculkBlocks {
                     .strength(10.0F, 1200.0F)
                     .nonOpaque()
                     .pistonBehavior(PistonBehavior.DESTROY)
+            )
+    );
+
+    public static final Block UMBRA_VAULT = registerBlock("umbra_vault",
+            new UmbraVaultBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.BLACK)
+                    .nonOpaque()
+                    .sounds(BlockSoundGroup.SCULK_CATALYST)
+                    .luminance(state -> state.get(UmbraVaultBlock.UMBRA_VAULT_STATE).getLuminance())
+                    .strength(50.0F)
+                    .blockVision(Blocks::never)
             )
     );
 

@@ -16,6 +16,8 @@ import net.minecraft.util.Rarity;
 
 public class SculkItems {
 
+    public static final Item UMBRA_KEY = registerItem("umbra_key", new Item(new Item.Settings()));
+
     public static final Item BLADED_HOOK = registerItem("bladed_hook",
             new AliasedBlockItem(SculkBlocks.BLADED_HOOK, new Item.Settings()
                     .rarity(Rarity.EPIC)
@@ -38,10 +40,13 @@ public class SculkItems {
     public static void registerSculkItems() {
         SculkEvolution.LOGGER.info("Registering Mod Items for " + SculkEvolution.MOD_ID);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries ->
-                entries.addAfter(Items.HEAVY_CORE, BLADED_HOOK));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+            entries.addAfter(Items.HEAVY_CORE, BLADED_HOOK);
+            entries.addAfter(Items.OMINOUS_TRIAL_KEY, UMBRA_KEY);
+        });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries ->
-                entries.addAfter(Items.MACE, SICKLE));
+                entries.addAfter(Items.MACE, SICKLE)
+        );
     }
 }

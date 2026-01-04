@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "sculkevolution:chests/ancient_altar/reward_umbra_rare",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "sculkevolution:chests/ancient_altar/reward_umbra_common",
+          "weight": 2
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "sculkevolution:chests/ancient_altar/reward_umbra_common"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 3.0,
+        "min": 1.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "sculkevolution:chests/ancient_altar/reward_umbra_unique"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "sculkevolution:chests/ancient_altar/reward_umbra"
+}

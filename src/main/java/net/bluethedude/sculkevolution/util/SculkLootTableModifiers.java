@@ -12,6 +12,8 @@ import net.minecraft.util.Identifier;
 public class SculkLootTableModifiers {
     private static final Identifier ICE_BOX_ID =
             Identifier.ofVanilla("chests/ancient_city_ice_box");
+    private static final Identifier ANCIENT_CITY_ID =
+            Identifier.ofVanilla("chests/ancient_city");
 
     public static void modifyLootTables(){
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
@@ -20,6 +22,16 @@ public class SculkLootTableModifiers {
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.05f))
                         .with(ItemEntry.builder(SculkItems.BLADED_HOOK))
+                        .apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1)).build());
+                tableBuilder.pool(poolBuilder);
+                poolBuilder.build();
+            }
+
+            if (ANCIENT_CITY_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(3))
+                        .conditionally(RandomChanceLootCondition.builder(0.05f))
+                        .with(ItemEntry.builder(SculkItems.UMBRA_KEY))
                         .apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1)).build());
                 tableBuilder.pool(poolBuilder);
                 poolBuilder.build();

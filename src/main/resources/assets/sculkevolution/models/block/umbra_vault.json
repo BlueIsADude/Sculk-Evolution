@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/template_vault",
+  "textures": {
+    "bottom": "minecraft:block/sculk_catalyst_top",
+    "front": "sculkevolution:block/umbra_vault_front_off",
+    "side": "sculkevolution:block/umbra_vault_side_off",
+    "top": "sculkevolution:block/umbra_vault_top_off"
+  }
+}

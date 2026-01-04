@@ -1,6 +1,7 @@
 package net.bluethedude.sculkevolution;
 
 import net.bluethedude.sculkevolution.block.SculkBlocks;
+import net.bluethedude.sculkevolution.block.entity.SculkBlockEntities;
 import net.bluethedude.sculkevolution.enchantment.SculkEnchantmentEffects;
 import net.bluethedude.sculkevolution.entity.SculkEntityTypes;
 import net.bluethedude.sculkevolution.item.SculkItems;
@@ -22,6 +23,7 @@ public class SculkEvolution implements ModInitializer {
         SculkBlocks.registerSculkBlocks();
         SculkItems.registerSculkItems();
         SculkEntityTypes.registerSculkEntities();
+        SculkBlockEntities.registerBlockEntities();
 
         SculkEnchantmentEffects.registerEnchantmentEffects();
         SculkDataComponents.registerDataComponentTypes();
