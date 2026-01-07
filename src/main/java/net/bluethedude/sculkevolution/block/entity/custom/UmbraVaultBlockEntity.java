@@ -30,7 +30,6 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Util;
@@ -123,7 +122,7 @@ public class UmbraVaultBlockEntity extends BlockEntity {
                 spawnConnectedParticles(world, pos, state, sharedData);
             }
 
-            spawnAmbientParticles(world, pos, sharedData, ParticleTypes.SCULK_CHARGE_POP);
+            spawnAmbientParticles(world, pos, sharedData);
             playAmbientSound(world, pos, sharedData);
         }
 
@@ -148,13 +147,13 @@ public class UmbraVaultBlockEntity extends BlockEntity {
             }
         }
 
-        private static void spawnAmbientParticles(World world, BlockPos pos, UmbraVaultSharedData sharedData, ParticleEffect particle) {
+        private static void spawnAmbientParticles(World world, BlockPos pos, UmbraVaultSharedData sharedData) {
             Random random = world.getRandom();
             if (random.nextFloat() <= 0.5F) {
                 Vec3d vec3d = getRegularParticlesPos(pos, random);
                 world.addParticle(ParticleTypes.SMOKE, vec3d.getX(), vec3d.getY(), vec3d.getZ(), 0.0, 0.0, 0.0);
                 if (hasDisplayItem(sharedData)) {
-                    world.addParticle(particle, vec3d.getX(), vec3d.getY(), vec3d.getZ(), 0.0, 0.0, 0.0);
+                    world.addParticle(ParticleTypes.SCULK_CHARGE_POP, vec3d.getX(), vec3d.getY(), vec3d.getZ(), 0.0, 0.0, 0.0);
                 }
             }
         }
@@ -212,7 +211,7 @@ public class UmbraVaultBlockEntity extends BlockEntity {
         }
 
         private static Vec3d getConnectedParticlesOrigin(BlockPos pos, Direction direction) {
-            return Vec3d.ofBottomCenter(pos).add((double)direction.getOffsetX() * 0.5, 1.75, (double)direction.getOffsetZ() * 0.5);
+            return Vec3d.ofBottomCenter(pos).add((double)direction.getOffsetX() * 0.5, 1.85, (double)direction.getOffsetZ() * 0.5);
         }
     }
 
@@ -256,7 +255,7 @@ public class UmbraVaultBlockEntity extends BlockEntity {
             UmbraVaultState vaultState = state.get(UmbraVaultBlock.UMBRA_VAULT_STATE);
             if (canBeUnlocked(config, vaultState)) {
                 if (!isValidKey(config, stack)) {
-                    playFailedUnlockSound(world, serverData, pos, SoundEvents.BLOCK_VAULT_INSERT_ITEM_FAIL);
+                    playFailedUnlockSound(world, serverData, pos);
                 } else {
                     List<ItemStack> list = generateLoot(world, config, pos, player);
                     if (!list.isEmpty()) {
@@ -323,9 +322,9 @@ public class UmbraVaultBlockEntity extends BlockEntity {
             return time % 20L == 0L && state == UmbraVaultState.ACTIVE;
         }
 
-        private static void playFailedUnlockSound(ServerWorld world, UmbraVaultServerData serverData, BlockPos pos, SoundEvent sound) {
+        private static void playFailedUnlockSound(ServerWorld world, UmbraVaultServerData serverData, BlockPos pos) {
             if (world.getTime() >= serverData.getLastFailedUnlockTime() + 15L) {
-                world.playSound(null, pos, sound, SoundCategory.BLOCKS);
+                world.playSound(null, pos, SoundEvents.BLOCK_VAULT_INSERT_ITEM_FAIL, SoundCategory.BLOCKS);
                 serverData.setLastFailedUnlockTime(world.getTime());
             }
         }

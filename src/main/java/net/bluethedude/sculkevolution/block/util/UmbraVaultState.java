@@ -2,6 +2,10 @@ package net.bluethedude.sculkevolution.block.util;
 
 import net.bluethedude.sculkevolution.block.entity.custom.UmbraVaultBlockEntity;
 import net.minecraft.block.dispenser.ItemDispenserBehavior;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LargeEntitySpawnHelper;
+import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.mob.WardenEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
@@ -11,6 +15,8 @@ import net.minecraft.util.StringIdentifiable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.WorldEvents;
 
 public enum UmbraVaultState implements StringIdentifiable {
@@ -52,11 +58,18 @@ public enum UmbraVaultState implements StringIdentifiable {
 		@Override
 		protected void onChangedTo(ServerWorld world, BlockPos pos, UmbraVaultConfig config, UmbraVaultSharedData sharedData) {
 			world.playSound(null, pos, SoundEvents.BLOCK_VAULT_OPEN_SHUTTER, SoundCategory.BLOCKS);
+			if (world.getDifficulty() != Difficulty.PEACEFUL && world.getGameRules().getBoolean(GameRules.DO_WARDEN_SPAWNING)) {
+				world.syncWorldEvent(WorldEvents.SCULK_SHRIEKS, pos, 0);
+			}
 		}
 
 		@Override
 		protected void onChangedFrom(ServerWorld world, BlockPos pos, UmbraVaultConfig config, UmbraVaultSharedData sharedData) {
 			world.playSound(null, pos, SoundEvents.BLOCK_VAULT_CLOSE_SHUTTER, SoundCategory.BLOCKS);
+			if (world.getDifficulty() != Difficulty.PEACEFUL && world.getGameRules().getBoolean(GameRules.DO_WARDEN_SPAWNING)) {
+				LargeEntitySpawnHelper.trySpawnAt(EntityType.WARDEN, SpawnReason.TRIGGERED, world, pos, 20, 5, 6, LargeEntitySpawnHelper.Requirements.WARDEN);
+				WardenEntity.addDarknessToClosePlayers(world, Vec3d.ofCenter(pos), null, 40);
+            }
 		}
 	};
 
@@ -82,7 +95,13 @@ public enum UmbraVaultState implements StringIdentifiable {
 			case INACTIVE -> updateActiveState(world, pos, config, serverData, sharedData, config.activationRange());
 			case ACTIVE -> updateActiveState(world, pos, config, serverData, sharedData, config.deactivationRange());
 			case UNLOCKING -> {
-				serverData.setStateUpdatingResumeTime(world.getTime() + 20L);
+				int i;
+				if (world.getDifficulty() != Difficulty.PEACEFUL && world.getGameRules().getBoolean(GameRules.DO_WARDEN_SPAWNING)) {
+					i = 90;
+				} else {
+					i = 20;
+				}
+				serverData.setStateUpdatingResumeTime(world.getTime() + (long)i);
 				yield EJECTING;
 			}
 			case EJECTING -> {

@@ -1,5 +1,54 @@
 {
+  "block.umbra_vault.ambient": {
+    "subtitle": "subtitles.sculkevolution.block.umbra_vault.ambient",
+    "sounds": [
+
+    ]
+  },
+  "block.umbra_vault.activate": {
+    "subtitle": "subtitles.block.vault.activate",
+    "sounds": [
+
+    ]
+  },
+  "block.umbra_vault.deactivate": {
+    "subtitle": "subtitles.block.vault.deactivate",
+    "sounds": [
+
+    ]
+  },
+  "block.umbra_vault.open_mouth": {
+    "subtitle": "subtitles.block.vault.open_shutter",
+    "sounds": [
+
+    ]
+  },
+  "block.umbra_vault.close_mouth": {
+    "subtitle": "subtitles.block.vault.close_shutter",
+    "sounds": [
+
+    ]
+  },
+  "block.umbra_vault.eject_item": {
+    "subtitle": "subtitles.block.vault.eject_item",
+    "sounds": [
+
+    ]
+  },
+  "block.umbra_vault.insert_item": {
+    "subtitle": "subtitles.block.vault.insert_item",
+    "sounds": [
+
+    ]
+  },
+  "block.umbra_vault.insert_item_fail": {
+    "subtitle": "subtitles.block.vault.insert_item_fail",
+    "sounds": [
+
+    ]
+  },
   "item.sickle.grow_small": {
+    "subtitle": "subtitles.sculkevolution.item.sickle.grow",
     "sounds": [
       "minecraft:block/sculk/charge1",
       "minecraft:block/sculk/charge2",
@@ -9,7 +58,7 @@
     ]
   },
   "item.sickle.grow_large": {
-    "subtitle": "subtitle.sculkevolution.sickle.grow",
+    "subtitle": "subtitles.sculkevolution.item.sickle.grow",
     "sounds": [
       "minecraft:block/sculk_sensor/sculk_clicking1",
       "minecraft:block/sculk_sensor/sculk_clicking2",
@@ -20,7 +69,7 @@
     ]
   },
   "item.sickle.reset": {
-    "subtitle": "subtitle.sculkevolution.sickle.reset",
+    "subtitle": "subtitles.sculkevolution.item.sickle.reset",
     "sounds": [
       "minecraft:block/sculk_sensor/sculk_clicking_stop1",
       "minecraft:block/sculk_sensor/sculk_clicking_stop2",
@@ -30,7 +79,7 @@
     ]
   },
   "item.sickle.sonic_charge": {
-    "subtitle": "subtitle.sculkevolution.sickle.sonic_charge",
+    "subtitle": "subtitles.sculkevolution.item.sickle.sonic_charge",
     "sounds": [
       "minecraft:mob/warden/sonic_charge1",
       "minecraft:mob/warden/sonic_charge2",
@@ -39,7 +88,7 @@
     ]
   },
   "item.sickle.sonic_boom": {
-    "subtitle": "subtitle.sculkevolution.sickle.sonic_boom",
+    "subtitle": "subtitles.sculkevolution.item.sickle.sonic_boom",
     "sounds": [
       "minecraft:mob/warden/sonic_boom1",
       "minecraft:mob/warden/sonic_boom2",

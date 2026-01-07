@@ -1,4 +1,7 @@
 {
+  "advancements.sculkevolution.pandoras_box.title": "Pandora's Box",
+  "advancements.sculkevolution.pandoras_box.description": "Unlock an Umbra Vault using an Umbra Key, then face the consequences",
+
   "item.sculkevolution.bladed_hook": "Bladed Hook",
   "item.sculkevolution.sickle": "Sickle",
   "item.sculkevolution.umbra_key": "Umbra Key",
@@ -20,9 +23,10 @@
   "enchantment.sculkevolution.repulse": "Repulse",
   "enchantment.sculkevolution.repulse.desc": "Prevents the sickle from losing all its sculk when hit, at the cost of a cooldown. Higher levels lessen the cooldown.",
 
-  "subtitle.sculkevolution.sickle.grow": "Sickle builds up sculk",
-  "subtitle.sculkevolution.sickle.reset": "Sickle sculk dissipates",
+  "subtitles.sculkevolution.item.sickle.grow": "Sickle sculk grows",
+  "subtitles.sculkevolution.item.sickle.reset": "Sickle sculk dissipates",
+  "subtitles.sculkevolution.item.sickle.sonic_charge": "Sickle charges",
+  "subtitles.sculkevolution.item.sickle.sonic_boom": "Sickle booms",
 
-  "subtitle.sculkevolution.sickle.sonic_charge": "Sickle charges",
-  "subtitle.sculkevolution.sickle.sonic_boom": "Sickle booms"
+  "tooltip.sculkevolution.sickle.sculk_damage": "+%s Sculk Damage"
 }

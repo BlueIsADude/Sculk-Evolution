@@ -3,11 +3,14 @@ package net.bluethedude.sculkevolution.block;
 import net.bluethedude.sculkevolution.SculkEvolution;
 import net.bluethedude.sculkevolution.block.custom.BladedHookBlock;
 import net.bluethedude.sculkevolution.block.custom.UmbraVaultBlock;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -54,5 +57,9 @@ public class SculkBlocks {
 
     public static void registerSculkBlocks() {
         SculkEvolution.LOGGER.info("Registering Mod Blocks for " + SculkEvolution.MOD_ID);
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries ->
+                entries.addAfter(Blocks.VAULT, UMBRA_VAULT)
+        );
     }
 }

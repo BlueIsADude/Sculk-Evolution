@@ -29,6 +29,7 @@ public class UmbraVaultSharedData {
 	private double connectedParticlesRange = UmbraVaultConfig.DEFAULT.deactivationRange();
 	public boolean dirty;
 
+
 	UmbraVaultSharedData(ItemStack displayItem, Set<UUID> connectedPlayers, double connectedParticlesRange) {
 		this.displayItem = displayItem;
 		this.connectedPlayers.addAll(connectedPlayers);
@@ -73,7 +74,6 @@ public class UmbraVaultSharedData {
 			this.markDirty();
 		}
 	}
-
 	private void markDirty() {
 		this.dirty = true;
 	}

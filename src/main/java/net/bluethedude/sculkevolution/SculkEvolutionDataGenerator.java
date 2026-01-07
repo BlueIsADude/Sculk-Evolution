@@ -13,6 +13,7 @@ public class SculkEvolutionDataGenerator implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
+        pack.addProvider(SculkAdvancementProvider::new);
         pack.addProvider(SculkBlockTagProvider::new);
         pack.addProvider(SculkItemTagProvider::new);
         pack.addProvider(SculkEnchantmentTagProvider::new);

@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "pandoras_box": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "sculkevolution:umbra_vault",
+                "state": {}
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "sculkevolution:umbra_key"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.sculkevolution.pandoras_box.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "sculkevolution:umbra_key"
+    },
+    "title": {
+      "translate": "advancements.sculkevolution.pandoras_box.title"
+    }
+  },
+  "requirements": [
+    [
+      "pandoras_box"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

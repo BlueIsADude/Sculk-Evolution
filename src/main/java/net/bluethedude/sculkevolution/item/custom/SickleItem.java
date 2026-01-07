@@ -18,12 +18,15 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.stat.Stats;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
@@ -59,6 +62,18 @@ public class SickleItem extends SwordItem implements PreHitItem {
 
     public void setSculkCharge(ItemStack stack, int sculkCharge) {
         stack.set(SculkDataComponents.SCULK_CHARGE, sculkCharge);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        if (getSculkCharge(stack) > 0) {
+            tooltip.addLast(Text.translatable("tooltip.sculkevolution.sickle.sculk_damage", getSculkCharge(stack)).formatted(Formatting.AQUA));
+            if (stack.hasEnchantments()) {
+                tooltip.addLast(Text.empty());
+            }
+        }
+
+        super.appendTooltip(stack, context, tooltip, type);
     }
 
     public static AttributeModifiersComponent createAttributeModifiers(ToolMaterial material, float baseAttackDamage, float attackSpeed) {
