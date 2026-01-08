@@ -1,10 +1,10 @@
 {
   "advancements.sculkevolution.pandoras_box.title": "Pandora's Box",
-  "advancements.sculkevolution.pandoras_box.description": "Unlock an Umbra Vault using an Umbra Key, then face the consequences",
+  "advancements.sculkevolution.pandoras_box.description": "Unlock an Umbra Vault using a Warden Key, then face the consequences",
 
   "item.sculkevolution.bladed_hook": "Bladed Hook",
   "item.sculkevolution.sickle": "Sickle",
-  "item.sculkevolution.umbra_key": "Umbra Key",
+  "item.sculkevolution.warden_key": "Warden Key",
 
   "block.sculkevolution.bladed_hook": "Bladed Hook",
   "block.sculkevolution.umbra_vault": "Umbra Vault",
@@ -23,8 +23,12 @@
   "enchantment.sculkevolution.repulse": "Repulse",
   "enchantment.sculkevolution.repulse.desc": "Prevents the sickle from losing all its sculk when hit, at the cost of a cooldown. Higher levels lessen the cooldown.",
 
-  "subtitles.sculkevolution.item.sickle.grow": "Sickle sculk grows",
-  "subtitles.sculkevolution.item.sickle.reset": "Sickle sculk dissipates",
+  "subtitles.sculkevolution.block.umbra_vault.ambient": "Vault bubbles",
+  "subtitles.sculkevolution.block.umbra_vault.activate": "Vault clicks",
+  "subtitles.sculkevolution.block.umbra_vault.deactivate": "Vault stops clicking",
+
+  "subtitles.sculkevolution.item.sickle.grow": "Sickle Sculk spreads",
+  "subtitles.sculkevolution.item.sickle.reset": "Sickle Sculk dissipates",
   "subtitles.sculkevolution.item.sickle.sonic_charge": "Sickle charges",
   "subtitles.sculkevolution.item.sickle.sonic_boom": "Sickle booms",
 

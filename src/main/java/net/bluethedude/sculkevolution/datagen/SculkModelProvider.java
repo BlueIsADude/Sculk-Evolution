@@ -17,6 +17,6 @@ public class SculkModelProvider  extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(SculkItems.UMBRA_KEY, Models.GENERATED);
+        itemModelGenerator.register(SculkItems.WARDEN_KEY, Models.GENERATED);
     }
 }

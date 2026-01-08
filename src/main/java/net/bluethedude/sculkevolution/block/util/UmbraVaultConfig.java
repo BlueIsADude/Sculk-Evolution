@@ -43,7 +43,7 @@ public record UmbraVaultConfig(
 			RegistryKey.of(RegistryKeys.LOOT_TABLE, Identifier.of(SculkEvolution.MOD_ID, "chests/ancient_altar/reward_umbra")),
 			4.0,
 			4.5,
-			new ItemStack(SculkItems.UMBRA_KEY),
+			new ItemStack(SculkItems.WARDEN_KEY),
 			Optional.empty(),
 			EntityDetector.NON_SPECTATOR_PLAYERS,
 			EntityDetector.Selector.IN_WORLD

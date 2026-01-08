@@ -2,49 +2,58 @@
   "block.umbra_vault.ambient": {
     "subtitle": "subtitles.sculkevolution.block.umbra_vault.ambient",
     "sounds": [
-
+      "sculkevolution:block/umbra_vault/ambient1",
+      "sculkevolution:block/umbra_vault/ambient2",
+      "sculkevolution:block/umbra_vault/ambient3"
     ]
   },
   "block.umbra_vault.activate": {
-    "subtitle": "subtitles.block.vault.activate",
+    "subtitle": "subtitles.sculkevolution.block.umbra_vault.activate",
     "sounds": [
-
+      "sculkevolution:block/umbra_vault/activate1",
+      "sculkevolution:block/umbra_vault/activate2"
     ]
   },
   "block.umbra_vault.deactivate": {
-    "subtitle": "subtitles.block.vault.deactivate",
+    "subtitle": "subtitles.sculkevolution.block.umbra_vault.deactivate",
     "sounds": [
-
+      "sculkevolution:block/umbra_vault/deactivate1",
+      "sculkevolution:block/umbra_vault/deactivate2"
     ]
   },
   "block.umbra_vault.open_mouth": {
     "subtitle": "subtitles.block.vault.open_shutter",
     "sounds": [
-
+      "sculkevolution:block/umbra_vault/open_mouth"
     ]
   },
   "block.umbra_vault.close_mouth": {
     "subtitle": "subtitles.block.vault.close_shutter",
     "sounds": [
-
+      "sculkevolution:block/umbra_vault/close_mouth"
     ]
   },
   "block.umbra_vault.eject_item": {
     "subtitle": "subtitles.block.vault.eject_item",
     "sounds": [
-
+      "sculkevolution:block/umbra_vault/eject1",
+      "sculkevolution:block/umbra_vault/eject2",
+      "sculkevolution:block/umbra_vault/eject3",
+      "sculkevolution:block/umbra_vault/eject4",
+      "sculkevolution:block/umbra_vault/eject5",
+      "sculkevolution:block/umbra_vault/eject6"
     ]
   },
   "block.umbra_vault.insert_item": {
     "subtitle": "subtitles.block.vault.insert_item",
     "sounds": [
-
+      "sculkevolution:block/umbra_vault/insert"
     ]
   },
   "block.umbra_vault.insert_item_fail": {
     "subtitle": "subtitles.block.vault.insert_item_fail",
     "sounds": [
-
+      "sculkevolution:block/umbra_vault/insert_fail"
     ]
   },
   "item.sickle.grow_small": {

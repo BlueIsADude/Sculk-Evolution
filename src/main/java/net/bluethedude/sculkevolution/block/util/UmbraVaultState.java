@@ -1,6 +1,7 @@
 package net.bluethedude.sculkevolution.block.util;
 
 import net.bluethedude.sculkevolution.block.entity.custom.UmbraVaultBlockEntity;
+import net.bluethedude.sculkevolution.sound.SculkSoundEvents;
 import net.minecraft.block.dispenser.ItemDispenserBehavior;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LargeEntitySpawnHelper;
@@ -10,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.StringIdentifiable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -26,7 +26,7 @@ public enum UmbraVaultState implements StringIdentifiable {
 			sharedData.setDisplayItem(ItemStack.EMPTY);
 
 			UmbraVaultBlockEntity.Client.spawnDeactivateParticles(world, pos, ParticleTypes.SOUL_FIRE_FLAME);
-			world.playSound(null, pos, SoundEvents.BLOCK_VAULT_DEACTIVATE, SoundCategory.BLOCKS);
+			world.playSound(null, pos, SculkSoundEvents.BLOCK_UMBRA_VAULT_DEACTIVATE, SoundCategory.BLOCKS);
 		}
 	},
 	ACTIVE("active", UmbraVaultState.Light.LIT) {
@@ -45,19 +45,19 @@ public enum UmbraVaultState implements StringIdentifiable {
                         ParticleTypes.SOUL_FIRE_FLAME
 				);
             }
-			world.playSound(null, pos, SoundEvents.BLOCK_VAULT_ACTIVATE, SoundCategory.BLOCKS);
+			world.playSound(null, pos, SculkSoundEvents.BLOCK_UMBRA_VAULT_ACTIVATE, SoundCategory.BLOCKS);
 		}
 	},
 	UNLOCKING("unlocking", UmbraVaultState.Light.LIT) {
 		@Override
 		protected void onChangedTo(ServerWorld world, BlockPos pos, UmbraVaultConfig config, UmbraVaultSharedData sharedData) {
-			world.playSound(null, pos, SoundEvents.BLOCK_VAULT_INSERT_ITEM, SoundCategory.BLOCKS);
+			world.playSound(null, pos, SculkSoundEvents.BLOCK_UMBRA_VAULT_INSERT_ITEM, SoundCategory.BLOCKS);
 		}
 	},
 	EJECTING("ejecting", UmbraVaultState.Light.LIT) {
 		@Override
 		protected void onChangedTo(ServerWorld world, BlockPos pos, UmbraVaultConfig config, UmbraVaultSharedData sharedData) {
-			world.playSound(null, pos, SoundEvents.BLOCK_VAULT_OPEN_SHUTTER, SoundCategory.BLOCKS);
+			world.playSound(null, pos, SculkSoundEvents.BLOCK_UMBRA_VAULT_OPEN_MOUTH, SoundCategory.BLOCKS);
 			if (world.getDifficulty() != Difficulty.PEACEFUL && world.getGameRules().getBoolean(GameRules.DO_WARDEN_SPAWNING)) {
 				world.syncWorldEvent(WorldEvents.SCULK_SHRIEKS, pos, 0);
 			}
@@ -65,7 +65,7 @@ public enum UmbraVaultState implements StringIdentifiable {
 
 		@Override
 		protected void onChangedFrom(ServerWorld world, BlockPos pos, UmbraVaultConfig config, UmbraVaultSharedData sharedData) {
-			world.playSound(null, pos, SoundEvents.BLOCK_VAULT_CLOSE_SHUTTER, SoundCategory.BLOCKS);
+			world.playSound(null, pos, SculkSoundEvents.BLOCK_UMBRA_VAULT_CLOSE_MOUTH, SoundCategory.BLOCKS);
 			if (world.getDifficulty() != Difficulty.PEACEFUL && world.getGameRules().getBoolean(GameRules.DO_WARDEN_SPAWNING)) {
 				LargeEntitySpawnHelper.trySpawnAt(EntityType.WARDEN, SpawnReason.TRIGGERED, world, pos, 20, 5, 6, LargeEntitySpawnHelper.Requirements.WARDEN);
 				WardenEntity.addDarknessToClosePlayers(world, Vec3d.ofCenter(pos), null, 40);
@@ -142,7 +142,7 @@ public enum UmbraVaultState implements StringIdentifiable {
 	private void ejectItem(ServerWorld world, BlockPos pos, ItemStack stack, float pitchModifier) {
 		ItemDispenserBehavior.spawnItem(world, stack, 2, Direction.UP, Vec3d.ofBottomCenter(pos).offset(Direction.UP, 1.2));
 		world.syncWorldEvent(WorldEvents.VAULT_EJECTS_ITEM, pos, 0);
-		world.playSound(null, pos, SoundEvents.BLOCK_VAULT_EJECT_ITEM, SoundCategory.BLOCKS, 1.0F, 0.8F + 0.4F * pitchModifier);
+		world.playSound(null, pos, SculkSoundEvents.BLOCK_UMBRA_VAULT_EJECT_ITEM, SoundCategory.BLOCKS, 1.0F, 0.8F + 0.4F * pitchModifier);
 	}
 
 	enum Light {

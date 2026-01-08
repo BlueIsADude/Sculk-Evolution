@@ -28,10 +28,10 @@ public class SculkAdvancementProvider extends FabricAdvancementProvider {
 
     @Override
     public void generateAdvancement(RegistryWrapper.WrapperLookup wrapperLookup, Consumer<AdvancementEntry> consumer) {
-        AdvancementEntry pandorasBox = Advancement.Builder.create()
+        Advancement.Builder.create()
                 .parent(AdvancementTabGenerator.reference("adventure/root"))
                 .display(
-                        SculkItems.UMBRA_KEY,
+                        SculkItems.WARDEN_KEY,
                         Text.translatable("advancements.sculkevolution.pandoras_box.title"),
                         Text.translatable("advancements.sculkevolution.pandoras_box.description"),
                         null,
@@ -45,7 +45,7 @@ public class SculkAdvancementProvider extends FabricAdvancementProvider {
                         ItemCriterion.Conditions.createItemUsedOnBlock(
                                 LocationPredicate.Builder.create()
                                         .block(BlockPredicate.Builder.create().blocks(SculkBlocks.UMBRA_VAULT).state(StatePredicate.Builder.create())),
-                                ItemPredicate.Builder.create().items(SculkItems.UMBRA_KEY)
+                                ItemPredicate.Builder.create().items(SculkItems.WARDEN_KEY)
                         )
                 )
                 .build(consumer, SculkEvolution.MOD_ID + ":adventure/pandoras_box");

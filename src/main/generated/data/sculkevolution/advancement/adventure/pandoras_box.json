@@ -16,7 +16,7 @@
           {
             "condition": "minecraft:match_tool",
             "predicate": {
-              "items": "sculkevolution:umbra_key"
+              "items": "sculkevolution:warden_key"
             }
           }
         ]
@@ -30,7 +30,7 @@
     },
     "icon": {
       "count": 1,
-      "id": "sculkevolution:umbra_key"
+      "id": "sculkevolution:warden_key"
     },
     "title": {
       "translate": "advancements.sculkevolution.pandoras_box.title"

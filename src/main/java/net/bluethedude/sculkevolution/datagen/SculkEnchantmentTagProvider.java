@@ -23,7 +23,7 @@ public class SculkEnchantmentTagProvider extends FabricTagProvider.EnchantmentTa
                 .add(SculkEnchantments.REPULSE)
                 .add(SculkEnchantments.SOUL_LUNGE);
 
-        getOrCreateTagBuilder(EnchantmentTags.IN_ENCHANTING_TABLE)
+        getOrCreateTagBuilder(EnchantmentTags.TREASURE)
                 .add(SculkEnchantments.ECHO_CHAMBER)
                 .add(SculkEnchantments.REPULSE)
                 .add(SculkEnchantments.SOUL_LUNGE);

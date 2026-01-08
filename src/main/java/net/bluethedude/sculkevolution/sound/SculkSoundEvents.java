@@ -8,14 +8,14 @@ import net.minecraft.util.Identifier;
 
 public class SculkSoundEvents {
 
-    public static final SoundEvent BLOCK_UMBRA_VAULT_AMBIENT = registerSoundEvent("item.umbra_vault.ambient");
-    public static final SoundEvent BLOCK_UMBRA_VAULT_ACTIVATE = registerSoundEvent("item.umbra_vault.activate");
-    public static final SoundEvent BLOCK_UMBRA_VAULT_DEACTIVATE = registerSoundEvent("item.umbra_vault.deactivate");
-    public static final SoundEvent BLOCK_UMBRA_VAULT_OPEN_MOUTH = registerSoundEvent("item.umbra_vault.open_mouth");
-    public static final SoundEvent BLOCK_UMBRA_VAULT_CLOSE_MOUTH = registerSoundEvent("item.umbra_vault.close_mouth");
-    public static final SoundEvent BLOCK_UMBRA_VAULT_EJECT_ITEM = registerSoundEvent("item.umbra_vault.eject_item");
-    public static final SoundEvent BLOCK_UMBRA_VAULT_INSERT_ITEM = registerSoundEvent("item.umbra_vault.insert_item");
-    public static final SoundEvent BLOCK_UMBRA_VAULT_INSERT_ITEM_FAIL = registerSoundEvent("item.umbra_vault.insert_item_fail");
+    public static final SoundEvent BLOCK_UMBRA_VAULT_AMBIENT = registerSoundEvent("block.umbra_vault.ambient");
+    public static final SoundEvent BLOCK_UMBRA_VAULT_ACTIVATE = registerSoundEvent("block.umbra_vault.activate");
+    public static final SoundEvent BLOCK_UMBRA_VAULT_DEACTIVATE = registerSoundEvent("block.umbra_vault.deactivate");
+    public static final SoundEvent BLOCK_UMBRA_VAULT_OPEN_MOUTH = registerSoundEvent("block.umbra_vault.open_mouth");
+    public static final SoundEvent BLOCK_UMBRA_VAULT_CLOSE_MOUTH = registerSoundEvent("block.umbra_vault.close_mouth");
+    public static final SoundEvent BLOCK_UMBRA_VAULT_EJECT_ITEM = registerSoundEvent("block.umbra_vault.eject_item");
+    public static final SoundEvent BLOCK_UMBRA_VAULT_INSERT_ITEM = registerSoundEvent("block.umbra_vault.insert_item");
+    public static final SoundEvent BLOCK_UMBRA_VAULT_INSERT_ITEM_FAIL = registerSoundEvent("block.umbra_vault.insert_item_fail");
 
     public static final SoundEvent ITEM_SICKLE_GROW_SMALL = registerSoundEvent("item.sickle.grow_small");
     public static final SoundEvent ITEM_SICKLE_GROW_LARGE = registerSoundEvent("item.sickle.grow_large");

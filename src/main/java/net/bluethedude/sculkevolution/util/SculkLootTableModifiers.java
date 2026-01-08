@@ -19,7 +19,7 @@ public class SculkLootTableModifiers {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(3))
                         .conditionally(RandomChanceLootCondition.builder(0.05f))
-                        .with(ItemEntry.builder(SculkItems.UMBRA_KEY))
+                        .with(ItemEntry.builder(SculkItems.WARDEN_KEY))
                         .apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1)).build());
                 tableBuilder.pool(poolBuilder);
                 poolBuilder.build();

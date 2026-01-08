@@ -7,6 +7,7 @@ import net.bluethedude.sculkevolution.block.custom.UmbraVaultBlock;
 import net.bluethedude.sculkevolution.block.entity.SculkBlockEntities;
 import net.bluethedude.sculkevolution.block.util.*;
 import net.bluethedude.sculkevolution.particle.SculkParticleTypes;
+import net.bluethedude.sculkevolution.sound.SculkSoundEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.VaultBlock;
@@ -30,7 +31,6 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
@@ -190,9 +190,9 @@ public class UmbraVaultBlockEntity extends BlockEntity {
         private static void playAmbientSound(World world, BlockPos pos, UmbraVaultSharedData sharedData) {
             if (hasDisplayItem(sharedData)) {
                 Random random = world.getRandom();
-                if (random.nextFloat() <= 0.02F) {
+                if (random.nextFloat() <= 0.01F) {
                     world.playSoundAtBlockCenter(
-                            pos, SoundEvents.BLOCK_VAULT_AMBIENT, SoundCategory.BLOCKS, random.nextFloat() * 0.25F + 0.75F, random.nextFloat() + 0.5F, false
+                            pos, SculkSoundEvents.BLOCK_UMBRA_VAULT_AMBIENT, SoundCategory.BLOCKS, random.nextFloat() * 0.25F + 0.75F, random.nextFloat() + 0.5F, false
                     );
                 }
             }
@@ -211,7 +211,7 @@ public class UmbraVaultBlockEntity extends BlockEntity {
         }
 
         private static Vec3d getConnectedParticlesOrigin(BlockPos pos, Direction direction) {
-            return Vec3d.ofBottomCenter(pos).add((double)direction.getOffsetX() * 0.5, 1.85, (double)direction.getOffsetZ() * 0.5);
+            return Vec3d.ofBottomCenter(pos).add((double)direction.getOffsetX() * 0.5, 2.0, (double)direction.getOffsetZ() * 0.5);
         }
     }
 
@@ -324,7 +324,7 @@ public class UmbraVaultBlockEntity extends BlockEntity {
 
         private static void playFailedUnlockSound(ServerWorld world, UmbraVaultServerData serverData, BlockPos pos) {
             if (world.getTime() >= serverData.getLastFailedUnlockTime() + 15L) {
-                world.playSound(null, pos, SoundEvents.BLOCK_VAULT_INSERT_ITEM_FAIL, SoundCategory.BLOCKS);
+                world.playSound(null, pos, SculkSoundEvents.BLOCK_UMBRA_VAULT_INSERT_ITEM_FAIL, SoundCategory.BLOCKS);
                 serverData.setLastFailedUnlockTime(world.getTime());
             }
         }

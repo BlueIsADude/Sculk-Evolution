@@ -11,8 +11,13 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "sculkevolution:chests/ancient_altar/reward_umbra_common",
+          "value": "sculkevolution:chests/ancient_altar/reward_umbra_uncommon",
           "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "sculkevolution:chests/ancient_altar/reward_umbra_common",
+          "weight": 1
         }
       ],
       "rolls": 1.0
@@ -23,6 +28,20 @@
         {
           "type": "minecraft:loot_table",
           "value": "sculkevolution:chests/ancient_altar/reward_umbra_common"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 3.0,
+        "min": 1.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "sculkevolution:chests/ancient_altar/reward_umbra_uncommon"
         }
       ],
       "rolls": {
