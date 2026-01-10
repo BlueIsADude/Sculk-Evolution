@@ -21,7 +21,9 @@ public class PlayerEntityMixin {
             if (targetThis.getWorld() instanceof ServerWorld) {
                 if (target instanceof LivingEntity livingEntity) {
                     ItemStack stack = targetThis.getWeaponStack();
-                    ((PreHitItem)stack.getItem()).sculk_evolution$preHit(stack, livingEntity, targetThis);
+                    if (stack.getItem() instanceof PreHitItem preHitItem) {
+                        preHitItem.sculk_evolution$preHit(stack, livingEntity, targetThis);
+                    }
                 }
             }
         }

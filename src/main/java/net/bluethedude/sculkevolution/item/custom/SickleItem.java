@@ -240,28 +240,25 @@ public class SickleItem extends SwordItem implements PreHitItem {
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if(entity instanceof LivingEntity livingEntity) {
             if(sculkLunging) {
-                if (!world.isClient) {
-                    ((ServerWorld) world).spawnParticles(
+                if (world instanceof ServerWorld server) {
+                    server.spawnParticles(
                             ParticleTypes.SCULK_SOUL,
                             livingEntity.getX(),
                             (livingEntity.getY() + livingEntity.getEyeY()) / 2,
                             livingEntity.getZ(),
                             1, 0.3, 0.3, 0.3, 0
                     );
-                    ((ServerWorld) world).spawnParticles(
+                    server.spawnParticles(
                             ParticleTypes.SOUL_FIRE_FLAME,
                             livingEntity.getX(),
                             (livingEntity.getY() + livingEntity.getEyeY()) / 2,
                             livingEntity.getZ(),
                             2, 0.3, 0.3, 0.3, 0
                     );
-                }
-                sculkLungeTicks++;
-                if (sculkLungeTicks % 20 == 10 && livingEntity.isOnGround()) {
-                    sculkLungeTicks = 0;
-                }
-                if (sculkLungeTicks % 20 == 0 || livingEntity.hurtTime != 0) {
-                    sculkLunging = false;
+                    sculkLungeTicks++;
+                    if (sculkLungeTicks % 15 == 0 || livingEntity.hurtTime != 0) {
+                        sculkLunging = false;
+                    }
                 }
             }
             if(selected || slot == 99) {
