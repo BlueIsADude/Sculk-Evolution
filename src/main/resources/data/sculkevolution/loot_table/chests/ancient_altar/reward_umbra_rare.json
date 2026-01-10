@@ -100,17 +100,11 @@
           "functions": [
             {
               "function": "minecraft:enchant_randomly",
-              "options": [
-                "minecraft:knockback",
-                "minecraft:punch",
-                "minecraft:smite",
-                "minecraft:looting",
-                "minecraft:multishot"
-              ]
+              "options": "minecraft:swift_sneak"
             }
           ],
           "name": "minecraft:book",
-          "weight": 2
+          "weight": 3
         },
         {
           "type": "minecraft:item",
@@ -126,6 +120,19 @@
           ],
           "name": "minecraft:book",
           "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": [
+                "sculkevolution:repulse"
+              ]
+            }
+          ],
+          "name": "minecraft:book",
+          "weight": 1
         },
         {
           "type": "minecraft:item",

@@ -73,20 +73,18 @@ public class SculkAdvancementProvider extends FabricAdvancementProvider {
                 .criterion(
                         "handheld_catalyst",
                         PlayerHurtEntityCriterion.Conditions.create(
-                                DamagePredicate.Builder.create()
-                                        .dealt(NumberRange.DoubleRange.atLeast(10.0))
-                                        .type(
-                                                DamageSourcePredicate.Builder.create()
-                                                        .tag(TagPredicate.expected(DamageTypeTags.IS_PLAYER_ATTACK))
-                                                        .directEntity(
-                                                                EntityPredicate.Builder.create()
-                                                                        .type(EntityType.PLAYER)
-                                                                        .equipment(EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().items(SculkItems.SICKLE)
-                                                                                .component(ComponentPredicate.builder().add(SculkDataComponents.SCULK_CHARGE, 9).build())))
-                                                        )
-                                        )
+                                DamagePredicate.Builder.create().type(
+                                        DamageSourcePredicate.Builder.create()
+                                                .tag(TagPredicate.expected(DamageTypeTags.IS_PLAYER_ATTACK))
+                                                .directEntity(
+                                                        EntityPredicate.Builder.create()
+                                                                .type(EntityType.PLAYER)
+                                                                .equipment(EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().items(SculkItems.SICKLE)
+                                                                        .component(ComponentPredicate.builder().add(SculkDataComponents.SCULK_CHARGE, 9).build())))
+                                                )
+                                )
                         )
                 )
-                .build(consumer, SculkEvolution.MOD_ID + ":adventure/pandoras_box");
+                .build(consumer, SculkEvolution.MOD_ID + ":adventure/handheld_catalyst");
     }
 }

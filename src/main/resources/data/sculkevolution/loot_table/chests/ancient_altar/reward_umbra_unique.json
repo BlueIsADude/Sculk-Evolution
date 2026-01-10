@@ -16,19 +16,6 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "options": [
-                "sculkevolution:repulse"
-              ]
-            }
-          ],
-          "name": "minecraft:book",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:silence_armor_trim_smithing_template"
         },
         {

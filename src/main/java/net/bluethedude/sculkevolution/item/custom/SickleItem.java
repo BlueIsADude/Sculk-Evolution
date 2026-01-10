@@ -158,7 +158,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
                     );
                 }
                 user.heal(4.0F);
-                user.getItemCooldownManager().set(this, 64);
+                user.getItemCooldownManager().set(this, 32);
                 stack.damage(1, user, EquipmentSlot.MAINHAND);
                 setSculkCharge(stack, getSculkCharge(stack) - 3);
                 return TypedActionResult.success(stack);
@@ -257,7 +257,10 @@ public class SickleItem extends SwordItem implements PreHitItem {
                     );
                 }
                 sculkLungeTicks++;
-                if (sculkLungeTicks % 36 == 0 || livingEntity.hurtTime != 0) {
+                if (sculkLungeTicks % 20 == 10 && livingEntity.isOnGround()) {
+                    sculkLungeTicks = 0;
+                }
+                if (sculkLungeTicks % 20 == 0 || livingEntity.hurtTime != 0) {
                     sculkLunging = false;
                 }
             }

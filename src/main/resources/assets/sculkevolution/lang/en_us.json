@@ -16,12 +16,12 @@
   "enchantment.sculkevolution.echo_chamber": "Echo Chamber",
   "enchantment.sculkevolution.echo_chamber.desc": "Releases a sonic boom at the cost of all the sculk built up by the sickle.",
   "enchantment.sculkevolution.soul_lunge": "Soul Lunge",
-  "enchantment.sculkevolution.soul_lunge.desc": "Uses a small amount of the sickle's built up sculk to dash forward.",
+  "enchantment.sculkevolution.soul_lunge.desc": "Uses a small portion of the sickle's built up sculk to dash forward.",
   "enchantment.sculkevolution.hemostasis": "Hemostasis",
-  "enchantment.sculkevolution.hemostasis.desc": "Can be used to heal a small amount of health, at the cost of the sickle's sculk. Can also be used as bone meal while crouching.",
+  "enchantment.sculkevolution.hemostasis.desc": "Absorbs a small amount of the sickle's sculk to heal the user.",
 
   "enchantment.sculkevolution.repulse": "Repulse",
-  "enchantment.sculkevolution.repulse.desc": "Prevents the sickle from losing most of its sculk when hit, at the cost of a cooldown. Also prevents sculk loss from Echo Chamber.",
+  "enchantment.sculkevolution.repulse.desc": "Prevents the sickle from losing most of its sculk when hit, at the cost of a cooldown. Also reduces sculk loss from Echo Chamber.",
 
   "subtitles.sculkevolution.block.umbra_vault.ambient": "Vault bubbles",
   "subtitles.sculkevolution.block.umbra_vault.activate": "Vault clicks",

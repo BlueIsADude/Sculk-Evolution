@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class PlayerEntityMixin {
 
     @Inject(at = @At("HEAD"), method = "attack")
-    private void attack(Entity target, CallbackInfo info) {
+    public void attack(Entity target, CallbackInfo info) {
         PlayerEntity targetThis = (PlayerEntity)(Object)this;
         if (target.isAttackable() && !target.handleAttack(targetThis)) {
             if (targetThis.getWorld() instanceof ServerWorld) {

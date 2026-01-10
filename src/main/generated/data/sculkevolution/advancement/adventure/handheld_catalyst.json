@@ -1,0 +1,53 @@
+{
+  "parent": "minecraft:adventure/avoid_vibration",
+  "criteria": {
+    "handheld_catalyst": {
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "minecraft:player",
+              "equipment": {
+                "mainhand": {
+                  "components": {
+                    "sculkevolution:sculk_charge": 9
+                  },
+                  "items": "sculkevolution:sickle"
+                }
+              }
+            },
+            "tags": [
+              {
+                "expected": true,
+                "id": "minecraft:is_player_attack"
+              }
+            ]
+          }
+        }
+      },
+      "trigger": "minecraft:player_hurt_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.sculkevolution.handheld_catalyst.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "sculkevolution:sickle"
+    },
+    "title": {
+      "translate": "advancements.sculkevolution.handheld_catalyst.title"
+    }
+  },
+  "requirements": [
+    [
+      "handheld_catalyst"
+    ]
+  ],
+  "rewards": {
+    "experience": 40
+  },
+  "sends_telemetry_event": true
+}
