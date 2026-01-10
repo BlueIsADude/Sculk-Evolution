@@ -15,29 +15,18 @@ import net.minecraft.util.Identifier;
 public class SculkEnchantments {
     public static final RegistryKey<Enchantment> ECHO_CHAMBER =
             RegistryKey.of(RegistryKeys.ENCHANTMENT, Identifier.of(SculkEvolution.MOD_ID, "echo_chamber"));
-    public static final RegistryKey<Enchantment> REPULSE =
-            RegistryKey.of(RegistryKeys.ENCHANTMENT, Identifier.of(SculkEvolution.MOD_ID, "repulse"));
     public static final RegistryKey<Enchantment> SOUL_LUNGE =
             RegistryKey.of(RegistryKeys.ENCHANTMENT, Identifier.of(SculkEvolution.MOD_ID, "soul_lunge"));
+    public static final RegistryKey<Enchantment> HEMOSTASIS =
+            RegistryKey.of(RegistryKeys.ENCHANTMENT, Identifier.of(SculkEvolution.MOD_ID, "hemostasis"));
+    public static final RegistryKey<Enchantment> REPULSE =
+            RegistryKey.of(RegistryKeys.ENCHANTMENT, Identifier.of(SculkEvolution.MOD_ID, "repulse"));
 
     public static void bootstrap(Registerable<Enchantment> registerable) {
         var enchantments = registerable.getRegistryLookup(RegistryKeys.ENCHANTMENT);
         var items = registerable.getRegistryLookup(RegistryKeys.ITEM);
 
         register(registerable, ECHO_CHAMBER, Enchantment.builder(Enchantment.definition(
-                        items.getOrThrow(SculkItemTags.SICKLE_ENCHANTABLE),
-                        5,
-                        1,
-                        Enchantment.leveledCost(25, 25),
-                        Enchantment.leveledCost(75, 25),
-                        4,
-                        AttributeModifierSlot.HAND))
-                .exclusiveSet(enchantments.getOrThrow(SculkEnchantmentTags.SICKLE_EXCLUSIVE_SET))
-                .addEffect(EnchantmentEffectComponentTypes.POST_ATTACK,
-                        EnchantmentEffectTarget.ATTACKER, EnchantmentEffectTarget.VICTIM, new BlankEnchantmentEffect()
-                )
-        );
-        register(registerable, REPULSE, Enchantment.builder(Enchantment.definition(
                         items.getOrThrow(SculkItemTags.SICKLE_ENCHANTABLE),
                         5,
                         1,
@@ -59,6 +48,32 @@ public class SculkEnchantments {
                         4,
                         AttributeModifierSlot.HAND))
                 .exclusiveSet(enchantments.getOrThrow(SculkEnchantmentTags.SICKLE_EXCLUSIVE_SET))
+                .addEffect(EnchantmentEffectComponentTypes.POST_ATTACK,
+                        EnchantmentEffectTarget.ATTACKER, EnchantmentEffectTarget.VICTIM, new BlankEnchantmentEffect()
+                )
+        );
+        register(registerable, HEMOSTASIS, Enchantment.builder(Enchantment.definition(
+                        items.getOrThrow(SculkItemTags.SICKLE_ENCHANTABLE),
+                        5,
+                        1,
+                        Enchantment.leveledCost(25, 25),
+                        Enchantment.leveledCost(75, 25),
+                        4,
+                        AttributeModifierSlot.HAND))
+                .exclusiveSet(enchantments.getOrThrow(SculkEnchantmentTags.SICKLE_EXCLUSIVE_SET))
+                .addEffect(EnchantmentEffectComponentTypes.POST_ATTACK,
+                        EnchantmentEffectTarget.ATTACKER, EnchantmentEffectTarget.VICTIM, new BlankEnchantmentEffect()
+                )
+        );
+        register(registerable, REPULSE, Enchantment.builder(Enchantment.definition(
+                        items.getOrThrow(SculkItemTags.SICKLE_ENCHANTABLE),
+                        5,
+                        1,
+                        Enchantment.leveledCost(25, 25),
+                        Enchantment.leveledCost(75, 25),
+                        4,
+                        AttributeModifierSlot.HAND))
+                .exclusiveSet(enchantments.getOrThrow(SculkEnchantmentTags.REPULSE_EXCLUSIVE_SET))
                 .addEffect(EnchantmentEffectComponentTypes.POST_ATTACK,
                         EnchantmentEffectTarget.ATTACKER, EnchantmentEffectTarget.VICTIM, new BlankEnchantmentEffect()
                 )

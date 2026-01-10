@@ -8,13 +8,13 @@
       {
         "affected": "victim",
         "effect": {
-          "type": "sculkevolution:echo_chamber"
+          "type": "sculkevolution:blank"
         },
         "enchanted": "attacker"
       }
     ]
   },
-  "exclusive_set": "#sculkevolution:exclusive_set/sickle",
+  "exclusive_set": "#sculkevolution:exclusive_set/repulse",
   "max_cost": {
     "base": 75,
     "per_level_above_first": 25

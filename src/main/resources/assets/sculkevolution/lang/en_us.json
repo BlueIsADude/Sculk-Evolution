@@ -1,6 +1,8 @@
 {
   "advancements.sculkevolution.pandoras_box.title": "Pandora's Box",
   "advancements.sculkevolution.pandoras_box.description": "Unlock an Umbra Vault using a Warden Key, then face the consequences",
+  "advancements.sculkevolution.handheld_catalyst.title": "Handheld Catalyst",
+  "advancements.sculkevolution.handheld_catalyst.description": "Reach the Sickle's maximum damage cap without taking any damage yourself",
 
   "item.sculkevolution.bladed_hook": "Bladed Hook",
   "item.sculkevolution.sickle": "Sickle",
@@ -15,13 +17,11 @@
   "enchantment.sculkevolution.echo_chamber.desc": "Releases a sonic boom at the cost of all the sculk built up by the sickle.",
   "enchantment.sculkevolution.soul_lunge": "Soul Lunge",
   "enchantment.sculkevolution.soul_lunge.desc": "Uses a small amount of the sickle's built up sculk to dash forward.",
-  "enchantment.sculkevolution.rejuvenate": "Rejuvenate",
-  "enchantment.sculkevolution.rejuvenate.desc": "Purifies a small portion of the sickle's sculk, healing the user. Can also be used similarly to bone meal while sneaking.",
+  "enchantment.sculkevolution.hemostasis": "Hemostasis",
+  "enchantment.sculkevolution.hemostasis.desc": "Can be used to heal a small amount of health, at the cost of the sickle's sculk. Can also be used as bone meal while crouching.",
 
-  "enchantment.sculkevolution.intensity": "Intensity",
-  "enchantment.sculkevolution.intensity.desc": "Boosts the sickle's damage scaling per hit by 0.5 per level.",
   "enchantment.sculkevolution.repulse": "Repulse",
-  "enchantment.sculkevolution.repulse.desc": "Prevents the sickle from losing all its sculk when hit, at the cost of a cooldown. Higher levels lessen the cooldown.",
+  "enchantment.sculkevolution.repulse.desc": "Prevents the sickle from losing most of its sculk when hit, at the cost of a cooldown. Also prevents sculk loss from Echo Chamber.",
 
   "subtitles.sculkevolution.block.umbra_vault.ambient": "Vault bubbles",
   "subtitles.sculkevolution.block.umbra_vault.activate": "Vault clicks",

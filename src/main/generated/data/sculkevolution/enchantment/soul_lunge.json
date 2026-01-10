@@ -8,7 +8,7 @@
       {
         "affected": "victim",
         "effect": {
-          "type": "sculkevolution:echo_chamber"
+          "type": "sculkevolution:blank"
         },
         "enchanted": "attacker"
       }

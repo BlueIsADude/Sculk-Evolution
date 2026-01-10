@@ -9,8 +9,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class SculkEnchantmentEffects {
-    public static final MapCodec<? extends EnchantmentEntityEffect> ECHO_CHAMBER =
-            registerEntityEffect("echo_chamber", BlankEnchantmentEffect.CODEC);
+    public static final MapCodec<? extends EnchantmentEntityEffect> BLANK =
+            registerEntityEffect("blank", BlankEnchantmentEffect.CODEC);
 
 
     private static MapCodec<? extends EnchantmentEntityEffect> registerEntityEffect(String name,

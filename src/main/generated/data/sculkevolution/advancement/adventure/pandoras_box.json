@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:adventure/root",
+  "parent": "minecraft:adventure/avoid_vibration",
   "criteria": {
     "pandoras_box": {
       "conditions": {
@@ -28,6 +28,7 @@
     "description": {
       "translate": "advancements.sculkevolution.pandoras_box.description"
     },
+    "frame": "goal",
     "icon": {
       "count": 1,
       "id": "sculkevolution:warden_key"

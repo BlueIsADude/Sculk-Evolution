@@ -20,12 +20,16 @@ public class SculkEnchantmentTagProvider extends FabricTagProvider.EnchantmentTa
 
         getOrCreateTagBuilder(SculkEnchantmentTags.SICKLE_EXCLUSIVE_SET)
                 .add(SculkEnchantments.ECHO_CHAMBER)
-                .add(SculkEnchantments.REPULSE)
-                .add(SculkEnchantments.SOUL_LUNGE);
+                .add(SculkEnchantments.SOUL_LUNGE)
+                .add(SculkEnchantments.HEMOSTASIS);
+
+        getOrCreateTagBuilder(SculkEnchantmentTags.REPULSE_EXCLUSIVE_SET)
+                .add(SculkEnchantments.REPULSE);
 
         getOrCreateTagBuilder(EnchantmentTags.TREASURE)
                 .add(SculkEnchantments.ECHO_CHAMBER)
-                .add(SculkEnchantments.REPULSE)
-                .add(SculkEnchantments.SOUL_LUNGE);
+                .add(SculkEnchantments.SOUL_LUNGE)
+                .add(SculkEnchantments.HEMOSTASIS)
+                .add(SculkEnchantments.REPULSE);
     }
 }
