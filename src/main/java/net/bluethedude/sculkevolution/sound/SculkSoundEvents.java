@@ -23,6 +23,7 @@ public class SculkSoundEvents {
 
     public static final SoundEvent ITEM_SICKLE_SONIC_CHARGE = registerSoundEvent("item.sickle.sonic_charge");
     public static final SoundEvent ITEM_SICKLE_SONIC_BOOM = registerSoundEvent("item.sickle.sonic_boom");
+    public static final SoundEvent ITEM_SICKLE_HEAL_USER = registerSoundEvent("item.sickle.heal_user");
 
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(SculkEvolution.MOD_ID, name);

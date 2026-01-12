@@ -143,7 +143,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
                         user.getX(),
                         user.getY(),
                         user.getZ(),
-                        SculkSoundEvents.ITEM_SICKLE_RESET,
+                        SculkSoundEvents.ITEM_SICKLE_HEAL_USER,
                         SoundCategory.PLAYERS,
                         3.0F,
                         1.0F

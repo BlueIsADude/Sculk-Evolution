@@ -7,6 +7,7 @@ import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
 
 public class SculkLootTableModifiers {
@@ -17,10 +18,10 @@ public class SculkLootTableModifiers {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ANCIENT_CITY_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(3))
-                        .conditionally(RandomChanceLootCondition.builder(0.05f))
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.348f))
                         .with(ItemEntry.builder(SculkItems.WARDEN_KEY))
-                        .apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1)).build());
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 3)).build());
                 tableBuilder.pool(poolBuilder);
                 poolBuilder.build();
             }

@@ -104,5 +104,12 @@
       "minecraft:mob/warden/sonic_boom3",
       "minecraft:mob/warden/sonic_boom4"
     ]
+  },
+  "item.sickle.heal_user": {
+    "subtitle": "subtitles.sculkevolution.item.sickle.heal_user",
+    "sounds": [
+      "minecraft:mob/warden/attack_impact1",
+      "minecraft:mob/warden/attack_impact2"
+    ]
   }
 }
