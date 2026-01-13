@@ -2,9 +2,6 @@
 
 Sculk Evolution is a mod that simply adds more content to the Deep Dark. It mainly adds a new unique weapon known as the Sickle, and a new Vault variant.
 
-NOTE: This mod will NOT be adding a new dimension. All content in the mod will be exclusively found in the deep dark and ancient cities.
-
-
 <details>
 <summary>Current Features (as of v1.0.0)</summary>
 
@@ -38,5 +35,20 @@ Note: Features listed here are subject to change, and might not be in the final 
 
 ## Budding Sculk Catalyst + Echomites
 The Budding Sculk Catalyst is crafted with a Sculk Catalyst and 4 Echo Shards surrounding it. Instead of spreading sculk when a mob dies, it will instead slowly grow Echo Shards on top of itself, growing by 1 level every time a mob is slain. If the echo shards are fully grown, it will instead spawn an Echomite, a slower but more dangerous version of the Silverfish. Echomites will also have a chance to spawn when breaking the fully grown echo shards.
+
+</details>
+
+<details>
+<summary>QnA</summary>
+
+## Will this be ported to [INSERT MINECRAFT VERSION HERE]?
+Probably not, mainly because of time. Unless the major modding version changes, this mod will probably stay on 1.21.1. I will also NOT backport the mod to older versions, since it relies so heavily on vaults existing.
+
+## Will there a NeoForge/Forge version?
+Not officially. I plan to stay on fabric, but as long as I am fully credited and have given permission beforehand, I am not opposed to unofficial ports. If you really want to play with the mod on forge however, you can use Sinytra Connector, but i am not responsible for any issues that pop up. Here be dragons!
+
+
+## Will there be a new dimension?
+No. This mod is mainly focused on adding content to the existing deep dark biome.
 
 </details>
