@@ -1,4 +1,13 @@
 {
+  "entity.echo_arrow.sonic_boom": {
+    "subtitle": "subtitles.sculkevolution.entity.echo_arrow.sonic_boom",
+    "sounds": [
+      "minecraft:mob/warden/sonic_boom1",
+      "minecraft:mob/warden/sonic_boom2",
+      "minecraft:mob/warden/sonic_boom3",
+      "minecraft:mob/warden/sonic_boom4"
+    ]
+  },
   "block.umbra_vault.ambient": {
     "subtitle": "subtitles.sculkevolution.block.umbra_vault.ambient",
     "sounds": [
@@ -108,8 +117,8 @@
   "item.sickle.heal_user": {
     "subtitle": "subtitles.sculkevolution.item.sickle.heal_user",
     "sounds": [
-      "minecraft:mob/warden/attack_impact1",
-      "minecraft:mob/warden/attack_impact2"
+      "minecraft:mob/warden/attack_impact_1",
+      "minecraft:mob/warden/attack_impact_2"
     ]
   }
 }

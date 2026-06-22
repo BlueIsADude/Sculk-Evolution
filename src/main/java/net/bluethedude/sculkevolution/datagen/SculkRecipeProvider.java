@@ -27,5 +27,14 @@ public class SculkRecipeProvider extends FabricRecipeProvider {
                 .pattern("O")
                 .criterion("has_bladed_hook", conditionsFromItem(SculkItems.BLADED_HOOK))
                 .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, SculkItems.ECHO_ARROW, 2)
+                .input('X', Items.ARROW)
+                .input('O', Items.ECHO_SHARD)
+                .pattern(" O ")
+                .pattern("OXO")
+                .pattern(" O ")
+                .criterion("has_echo_shard", conditionsFromItem(Items.ECHO_SHARD))
+                .offerTo(exporter);
     }
 }

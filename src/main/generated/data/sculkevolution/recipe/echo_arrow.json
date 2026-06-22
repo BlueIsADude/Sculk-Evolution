@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "O": {
+      "item": "minecraft:echo_shard"
+    },
+    "X": {
+      "item": "minecraft:arrow"
+    }
+  },
+  "pattern": [
+    " O ",
+    "OXO",
+    " O "
+  ],
+  "result": {
+    "count": 2,
+    "id": "sculkevolution:echo_arrow"
+  }
+}

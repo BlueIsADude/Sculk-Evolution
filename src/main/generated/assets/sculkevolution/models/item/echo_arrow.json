@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "sculkevolution:block/bladed_hook"
+    "layer0": "sculkevolution:item/echo_arrow"
   }
 }

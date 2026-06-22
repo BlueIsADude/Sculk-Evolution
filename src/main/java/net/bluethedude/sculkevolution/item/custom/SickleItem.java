@@ -1,5 +1,6 @@
 package net.bluethedude.sculkevolution.item.custom;
 
+import net.bluethedude.sculkevolution.entity.damage.SculkDamageTypeTags;
 import net.bluethedude.sculkevolution.enchantment.SculkEnchantments;
 import net.bluethedude.sculkevolution.sound.SculkSoundEvents;
 import net.bluethedude.sculkevolution.util.SculkDataComponents;
@@ -120,6 +121,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
+        //Echo Chamber Enchant Charge
         if (hasEnchantment(stack, SculkEnchantments.ECHO_CHAMBER)) {
             if (getSculkCharge(stack) >= 3) {
                 world.playSound(
@@ -136,6 +138,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
                 return TypedActionResult.consume(stack);
             }
         }
+        //Hemostasis Enchant Use
         if (hasEnchantment(stack, SculkEnchantments.HEMOSTASIS)) {
             if (getSculkCharge(stack) >= 3 && user.getHealth() < user.getMaxHealth()) {
                 world.playSound(
@@ -164,6 +167,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
                 return TypedActionResult.success(stack);
             }
         }
+        //Hemostasis Enchant Use
         if (hasEnchantment(stack, SculkEnchantments.SOUL_LUNGE)) {
             if (getSculkCharge(stack) >= 3 && !user.isFallFlying()) {
                 Vec3d userRotation = user.getRotationVector();
@@ -198,6 +202,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
 
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
+        //Echo Chamber Enchant Use
         if (hasEnchantment(stack, SculkEnchantments.ECHO_CHAMBER)) {
             if (user instanceof PlayerEntity playerEntity && getSculkCharge(stack) >= 3) {
                 if(!world.isClient) {
@@ -239,6 +244,7 @@ public class SickleItem extends SwordItem implements PreHitItem {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if(entity instanceof LivingEntity livingEntity) {
+            //Soul Lunge Particles
             if(sculkLunging) {
                 if (world instanceof ServerWorld server) {
                     server.spawnParticles(
@@ -261,27 +267,31 @@ public class SickleItem extends SwordItem implements PreHitItem {
                     }
                 }
             }
+            //Sickle Resetting Logic
             if(selected || slot == 99) {
                 if (livingEntity.hurtTime >= 9 && getSculkCharge(stack) != 0) {
-                     if (livingEntity instanceof PlayerEntity playerEntity && !playerEntity.getItemCooldownManager().isCoolingDown(this)
-                            || !(livingEntity instanceof PlayerEntity)) {
-                        world.playSound(
-                                null,
-                                livingEntity.getX(),
-                                livingEntity.getY(),
-                                livingEntity.getZ(),
-                                SculkSoundEvents.ITEM_SICKLE_RESET,
-                                SoundCategory.PLAYERS,
-                                1.5F,
-                                1.25F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
-                        );
-                        if (getSculkCharge(stack) >= 3 && hasEnchantment(stack, SculkEnchantments.REPULSE)) {
-                            if (livingEntity instanceof PlayerEntity playerEntity) {
-                                playerEntity.getItemCooldownManager().set(this, 32);
+                    DamageSource damageSource = livingEntity.getRecentDamageSource();
+                    if (damageSource != null && !damageSource.isIn(SculkDamageTypeTags.WONT_RESET_SICKLE)) {
+                        if (livingEntity instanceof PlayerEntity playerEntity && !playerEntity.getItemCooldownManager().isCoolingDown(this)
+                                || !(livingEntity instanceof PlayerEntity)) {
+                            world.playSound(
+                                    null,
+                                    livingEntity.getX(),
+                                    livingEntity.getY(),
+                                    livingEntity.getZ(),
+                                    SculkSoundEvents.ITEM_SICKLE_RESET,
+                                    SoundCategory.PLAYERS,
+                                    1.5F,
+                                    1.25F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
+                            );
+                            if (getSculkCharge(stack) >= 3 && hasEnchantment(stack, SculkEnchantments.REPULSE)) {
+                                if (livingEntity instanceof PlayerEntity playerEntity) {
+                                    playerEntity.getItemCooldownManager().set(this, 32);
+                                }
+                                setSculkCharge(stack, getSculkCharge(stack) - 3);
+                            } else {
+                                setSculkCharge(stack, 0);
                             }
-                            setSculkCharge(stack, getSculkCharge(stack) - 3);
-                        } else {
-                            setSculkCharge(stack, 0);
                         }
                     }
                 }

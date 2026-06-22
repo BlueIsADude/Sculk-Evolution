@@ -54,7 +54,7 @@ public class UmbraVaultBlockEntity extends BlockEntity {
     private UmbraVaultConfig config = UmbraVaultConfig.DEFAULT;
 
     public UmbraVaultBlockEntity(BlockPos pos, BlockState state) {
-        super(SculkBlockEntities.UMBRA_VAULT_BE, pos, state);
+        super(SculkBlockEntities.UMBRA_VAULT, pos, state);
     }
 
     @Nullable

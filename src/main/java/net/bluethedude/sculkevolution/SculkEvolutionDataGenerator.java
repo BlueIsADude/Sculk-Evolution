@@ -15,6 +15,8 @@ public class SculkEvolutionDataGenerator implements DataGeneratorEntrypoint {
 
         pack.addProvider(SculkAdvancementProvider::new);
         pack.addProvider(SculkBlockTagProvider::new);
+        pack.addProvider(SculkDamageTypeTagProvider::new);
+        pack.addProvider(SculkEntityTypeTagProvider::new);
         pack.addProvider(SculkItemTagProvider::new);
         pack.addProvider(SculkEnchantmentTagProvider::new);
         pack.addProvider(SculkLootTableProvider::new);
