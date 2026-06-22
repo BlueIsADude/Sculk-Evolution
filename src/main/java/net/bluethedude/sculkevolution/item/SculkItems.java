@@ -2,19 +2,20 @@ package net.bluethedude.sculkevolution.item;
 
 import net.bluethedude.sculkevolution.SculkEvolution;
 import net.bluethedude.sculkevolution.block.SculkBlocks;
+import net.bluethedude.sculkevolution.entity.SculkEntityTypes;
+import net.bluethedude.sculkevolution.item.custom.EchoArrowItem;
 import net.bluethedude.sculkevolution.item.custom.SickleItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
 public class SculkItems {
+
+    public static final Item ECHO_ARROW = registerItem("echo_arrow", new EchoArrowItem(new Item.Settings()));
 
     public static final Item WARDEN_KEY = registerItem("warden_key", new Item(new Item.Settings()));
 
@@ -23,7 +24,6 @@ public class SculkItems {
                     .rarity(Rarity.EPIC)
             )
     );
-
     public static final Item SICKLE = registerItem("sickle",
             new SickleItem(SculkToolMaterials.ECHO_SHARD, new Item.Settings()
                     .rarity(Rarity.EPIC)
@@ -31,6 +31,9 @@ public class SculkItems {
                     .component(DataComponentTypes.TOOL, SickleItem.createToolComponent())
                     .attributeModifiers(SickleItem.createAttributeModifiers(SculkToolMaterials.ECHO_SHARD, -2.0F, -2.0F))
             )
+    );
+    public static final Item ECHOMITE_SPAWN_EGG = registerItem("echomite_spawn_egg",
+            new SpawnEggItem(SculkEntityTypes.ECHOMITE,1447446, 1001033, new Item.Settings())
     );
 
     private static Item registerItem(String name, Item item) {
@@ -45,8 +48,13 @@ public class SculkItems {
             entries.addAfter(Items.OMINOUS_TRIAL_KEY, WARDEN_KEY);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries ->
-                entries.addAfter(Items.MACE, SICKLE)
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+            entries.addAfter(Items.MACE, SICKLE);
+            entries.addAfter(Items.SPECTRAL_ARROW, ECHO_ARROW);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries ->
+            entries.addAfter(Items.WARDEN_SPAWN_EGG, ECHOMITE_SPAWN_EGG)
         );
     }
 }

@@ -9,8 +9,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class SculkBlockEntities {
-    public static final BlockEntityType<UmbraVaultBlockEntity> UMBRA_VAULT_BE =
-            Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(SculkEvolution.MOD_ID, "umbra_vault_be"),
+    public static final BlockEntityType<UmbraVaultBlockEntity> UMBRA_VAULT =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(SculkEvolution.MOD_ID, "umbra_vault"),
                     BlockEntityType.Builder.create(UmbraVaultBlockEntity::new, SculkBlocks.UMBRA_VAULT).build(null));
 
 

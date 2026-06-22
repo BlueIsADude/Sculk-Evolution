@@ -19,6 +19,9 @@ public class SculkItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 
+        getOrCreateTagBuilder(ItemTags.ARROWS)
+                .add(SculkItems.ECHO_ARROW);
+
         getOrCreateTagBuilder(SculkItemTags.SICKLE_ENCHANTABLE)
                 .add(SculkItems.SICKLE);
 

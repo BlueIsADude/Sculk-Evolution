@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "#minecraft:bypasses_invulnerability",
+      "required": false
+    },
+    {
+      "id": "minecraft:starve",
+      "required": false
+    },
+    {
+      "id": "minecraft:outside_border",
+      "required": false
+    }
+  ]
+}

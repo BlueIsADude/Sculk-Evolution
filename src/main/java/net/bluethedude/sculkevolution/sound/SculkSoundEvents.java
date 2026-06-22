@@ -8,6 +8,9 @@ import net.minecraft.util.Identifier;
 
 public class SculkSoundEvents {
 
+    public static final SoundEvent ENTITY_ECHO_ARROW_RICOCHET = registerSoundEvent("entity.echo_arrow.ricochet");
+    public static final SoundEvent ENTITY_ECHO_ARROW_SONIC_BOOM = registerSoundEvent("entity.echo_arrow.sonic_boom");
+
     public static final SoundEvent BLOCK_UMBRA_VAULT_AMBIENT = registerSoundEvent("block.umbra_vault.ambient");
     public static final SoundEvent BLOCK_UMBRA_VAULT_ACTIVATE = registerSoundEvent("block.umbra_vault.activate");
     public static final SoundEvent BLOCK_UMBRA_VAULT_DEACTIVATE = registerSoundEvent("block.umbra_vault.deactivate");

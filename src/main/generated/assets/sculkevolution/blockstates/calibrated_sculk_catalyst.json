@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "bloom=false": {
+      "model": "sculkevolution:block/calibrated_sculk_catalyst"
+    },
+    "bloom=true": {
+      "model": "sculkevolution:block/calibrated_sculk_catalyst_bloom"
+    }
+  }
+}

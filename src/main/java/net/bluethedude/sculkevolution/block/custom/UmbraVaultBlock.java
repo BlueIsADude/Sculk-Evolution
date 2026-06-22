@@ -74,14 +74,14 @@ public class UmbraVaultBlock extends BlockWithEntity {
         return world instanceof ServerWorld serverWorld ?
                 validateTicker(
                         type,
-                        SculkBlockEntities.UMBRA_VAULT_BE,
+                        SculkBlockEntities.UMBRA_VAULT,
                         (worldx, pos, statex, blockEntity) -> UmbraVaultBlockEntity.Server.tick(
                                 serverWorld, pos, statex, blockEntity.getConfig(), blockEntity.getServerData(), blockEntity.getSharedData()
                         )
                 ) :
                 validateTicker(
                         type,
-                        SculkBlockEntities.UMBRA_VAULT_BE,
+                        SculkBlockEntities.UMBRA_VAULT,
                         (worldx, pos, statex, blockEntity) -> UmbraVaultBlockEntity.Client.tick(worldx, pos, statex, blockEntity.getClientData(), blockEntity.getSharedData())
                 );
     }

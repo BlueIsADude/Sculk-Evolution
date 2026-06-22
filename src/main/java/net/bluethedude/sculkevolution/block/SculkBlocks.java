@@ -10,7 +10,6 @@ import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -32,13 +31,17 @@ public class SculkBlocks {
 
     public static final Block UMBRA_VAULT = registerBlock("umbra_vault",
             new UmbraVaultBlock(AbstractBlock.Settings.create()
-                    .mapColor(MapColor.BLACK)
+                    .mapColor(MapColor.CYAN)
                     .nonOpaque()
                     .sounds(BlockSoundGroup.SCULK_CATALYST)
                     .luminance(state -> state.get(UmbraVaultBlock.UMBRA_VAULT_STATE).getLuminance())
                     .strength(50.0F)
                     .blockVision(Blocks::never)
             )
+    );
+
+    public static final Block CALIBRATED_SCULK_CATALYST = registerBlock("calibrated_sculk_catalyst",
+            new SculkCatalystBlock(AbstractBlock.Settings.create())
     );
 
     private static Block registerBlock(String name, Block block) {
