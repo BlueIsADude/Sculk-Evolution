@@ -21,6 +21,11 @@ public class SculkModelProvider  extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         this.registerUmbraVault(blockStateModelGenerator);
         this.registerCalibratedSculkCatalyst(blockStateModelGenerator);
+
+        blockStateModelGenerator.registerAmethyst(SculkBlocks.SMALL_ECHO_BUD);
+        blockStateModelGenerator.registerAmethyst(SculkBlocks.MEDIUM_ECHO_BUD);
+        blockStateModelGenerator.registerAmethyst(SculkBlocks.LARGE_ECHO_BUD);
+        blockStateModelGenerator.registerAmethyst(SculkBlocks.ECHO_CLUSTER);
     }
 
     private void registerUmbraVault(BlockStateModelGenerator modelGenerator) {

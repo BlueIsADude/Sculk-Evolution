@@ -19,5 +19,11 @@ public class SculkEntityTypeTagProvider extends FabricTagProvider.EntityTypeTagP
 
         getOrCreateTagBuilder(EntityTypeTags.ARROWS)
                 .add(SculkEntityTypes.ECHO_ARROW);
+
+        getOrCreateTagBuilder(EntityTypeTags.ARTHROPOD)
+                .add(SculkEntityTypes.ECHOMITE);
+
+        getOrCreateTagBuilder(EntityTypeTags.POWDER_SNOW_WALKABLE_MOBS)
+                .add(SculkEntityTypes.ECHOMITE);
     }
 }

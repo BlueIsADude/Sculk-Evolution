@@ -8,6 +8,7 @@ import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.DamageTypeTags;
+import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -23,6 +24,8 @@ public class SculkDamageTypeTagProvider extends FabricTagProvider<DamageType> {
         getOrCreateTagBuilder(SculkDamageTypeTags.WONT_RESET_SICKLE)
                 .addOptionalTag(DamageTypeTags.BYPASSES_INVULNERABILITY)
                 .addOptional(DamageTypes.STARVE)
-                .addOptional(DamageTypes.OUTSIDE_BORDER);
+                .addOptional(DamageTypes.OUTSIDE_BORDER)
+
+                .addOptional(Identifier.of("moleorigin:sonic_backfire"));
     }
 }

@@ -1,8 +1,10 @@
 package net.bluethedude.sculkevolution.datagen;
 
+import net.bluethedude.sculkevolution.block.SculkBlocks;
 import net.bluethedude.sculkevolution.item.SculkItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
@@ -26,6 +28,16 @@ public class SculkRecipeProvider extends FabricRecipeProvider {
                 .pattern("X")
                 .pattern("O")
                 .criterion("has_bladed_hook", conditionsFromItem(SculkItems.BLADED_HOOK))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, SculkBlocks.CALIBRATED_SCULK_CATALYST)
+                .input('#', Blocks.SCULK_CATALYST)
+                .input('X', Items.AMETHYST_SHARD)
+                .input('O', Items.ECHO_SHARD)
+                .pattern(" O ")
+                .pattern("X#X")
+                .pattern(" X ")
+                .criterion("has_echo_shard", conditionsFromItem(Items.ECHO_SHARD))
                 .offerTo(exporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, SculkItems.ECHO_ARROW, 2)

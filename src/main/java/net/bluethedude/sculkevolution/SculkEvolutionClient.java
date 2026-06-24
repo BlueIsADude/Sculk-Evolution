@@ -27,6 +27,11 @@ public class SculkEvolutionClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(SculkBlocks.BLADED_HOOK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(SculkBlocks.UMBRA_VAULT, RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(SculkBlocks.ECHO_CLUSTER, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(SculkBlocks.SMALL_ECHO_BUD, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(SculkBlocks.MEDIUM_ECHO_BUD, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(SculkBlocks.LARGE_ECHO_BUD, RenderLayer.getCutout());
+
         BlockEntityRendererFactories.register(SculkBlockEntities.UMBRA_VAULT, UmbraVaultBlockEntityRenderer::new);
 
         EntityRendererRegistry.register(SculkEntityTypes.ECHO_ARROW, EchoArrowEntityRenderer::new);

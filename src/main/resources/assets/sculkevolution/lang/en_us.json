@@ -14,6 +14,10 @@
   "block.sculkevolution.bladed_hook": "Bladed Hook",
   "block.sculkevolution.umbra_vault": "Umbra Vault",
   "block.sculkevolution.calibrated_sculk_catalyst": "Calibrated Sculk Catalyst",
+  "block.sculkevolution.small_echo_bud": "Small Echo Bud",
+  "block.sculkevolution.medium_echo_bud": "Medium Echo Bud",
+  "block.sculkevolution.large_echo_bud": "Large Echo Bud",
+  "block.sculkevolution.echo_cluster": "Echo Cluster",
 
   "entity.sculkevolution.echomite": "Echomite",
   "entity.sculkevolution.echo_arrow": "Echo Arrow",
@@ -28,8 +32,11 @@
   "enchantment.sculkevolution.repulse": "Repulse",
   "enchantment.sculkevolution.repulse.desc": "Prevents the sickle from losing most of its sculk when hit, at the cost of a cooldown. Also reduces sculk loss from Echo Chamber.",
 
-  "subtitles.sculkevolution.entity.echo_arrow.ricochet": "Arrow ricochets",
   "subtitles.sculkevolution.entity.echo_arrow.sonic_boom": "Arrow booms",
+
+  "subtitles.sculkevolution.entity.echomite.ambient": "Echomite scuttles",
+  "subtitles.sculkevolution.entity.echomite.death": "Echomite dies",
+  "subtitles.sculkevolution.entity.echomite.hurt": "Echomite hurts",
 
   "subtitles.sculkevolution.block.umbra_vault.ambient": "Vault bubbles",
   "subtitles.sculkevolution.block.umbra_vault.activate": "Vault clicks",

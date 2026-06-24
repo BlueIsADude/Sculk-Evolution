@@ -8,6 +8,38 @@
       "minecraft:mob/warden/sonic_boom4"
     ]
   },
+  "entity.echomite.ambient": {
+    "subtitle": "subtitles.sculkevolution.entity.echomite.ambient",
+    "sounds": [
+      "minecraft:mob/silverfish/say1",
+      "minecraft:mob/silverfish/say2",
+      "minecraft:mob/silverfish/say3",
+      "minecraft:mob/silverfish/say4"
+    ]
+  },
+  "entity.echomite.death": {
+    "subtitle": "subtitles.sculkevolution.entity.echomite.death",
+    "sounds": [
+      "minecraft:mob/silverfish/kill"
+    ]
+  },
+  "entity.echomite.hurt": {
+    "subtitle": "subtitles.sculkevolution.entity.echomite.hurt",
+    "sounds": [
+      "minecraft:mob/silverfish/hit1",
+      "minecraft:mob/silverfish/hit2",
+      "minecraft:mob/silverfish/hit3"
+    ]
+  },
+  "entity.echomite.step": {
+    "subtitle": "subtitles.sculkevolution.entity.echomite.step",
+    "sounds": [
+      "minecraft:mob/silverfish/step1",
+      "minecraft:mob/silverfish/step2",
+      "minecraft:mob/silverfish/step3",
+      "minecraft:mob/silverfish/step4"
+    ]
+  },
   "block.umbra_vault.ambient": {
     "subtitle": "subtitles.sculkevolution.block.umbra_vault.ambient",
     "sounds": [

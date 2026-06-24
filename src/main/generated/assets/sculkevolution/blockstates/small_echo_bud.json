@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "sculkevolution:block/small_echo_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "sculkevolution:block/small_echo_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "sculkevolution:block/small_echo_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "sculkevolution:block/small_echo_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "sculkevolution:block/small_echo_bud"
+    },
+    "facing=west": {
+      "model": "sculkevolution:block/small_echo_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

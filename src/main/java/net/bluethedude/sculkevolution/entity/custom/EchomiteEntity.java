@@ -1,5 +1,6 @@
 package net.bluethedude.sculkevolution.entity.custom;
 
+import net.bluethedude.sculkevolution.sound.SculkSoundEvents;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -13,7 +14,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
@@ -53,28 +53,33 @@ public class EchomiteEntity extends HostileEntity {
     }
 
     @Override
+    public boolean disablesShield() {
+        return true;
+    }
+
+    @Override
     protected Entity.MoveEffect getMoveEffect() {
         return Entity.MoveEffect.EVENTS;
     }
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.ENTITY_ENDERMITE_AMBIENT;
+        return SculkSoundEvents.ENTITY_ECHOMITE_AMBIENT;
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {
-        return SoundEvents.ENTITY_ENDERMITE_HURT;
+        return SculkSoundEvents.ENTITY_ECHOMITE_HURT;
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.ENTITY_ENDERMITE_DEATH;
+        return SculkSoundEvents.ENTITY_ECHOMITE_DEATH;
     }
 
     @Override
     protected void playStepSound(BlockPos pos, BlockState state) {
-        this.playSound(SoundEvents.ENTITY_ENDERMITE_STEP, 0.15F, 1.0F);
+        this.playSound(SculkSoundEvents.ENTITY_ECHOMITE_STEP, 0.15F, 1.0F);
     }
 
     @Override

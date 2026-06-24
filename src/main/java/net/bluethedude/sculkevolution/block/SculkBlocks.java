@@ -2,6 +2,7 @@ package net.bluethedude.sculkevolution.block;
 
 import net.bluethedude.sculkevolution.SculkEvolution;
 import net.bluethedude.sculkevolution.block.custom.BladedHookBlock;
+import net.bluethedude.sculkevolution.block.custom.CalibratedSculkCatalystBlock;
 import net.bluethedude.sculkevolution.block.custom.UmbraVaultBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
@@ -41,7 +42,68 @@ public class SculkBlocks {
     );
 
     public static final Block CALIBRATED_SCULK_CATALYST = registerBlock("calibrated_sculk_catalyst",
-            new SculkCatalystBlock(AbstractBlock.Settings.create())
+            new CalibratedSculkCatalystBlock(AbstractBlock.Settings.copy(Blocks.SCULK_CATALYST))
+    );
+
+    public static final Block ECHO_CLUSTER = registerBlock("echo_cluster",
+            new AmethystClusterBlock(
+                    7.0F,
+                    3.0F,
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.BLACK)
+                            .solid()
+                            .nonOpaque()
+                            .requiresTool()
+                            .strength(1.5F)
+                            .luminance(state -> 5)
+                            .sounds(BlockSoundGroup.AMETHYST_CLUSTER)
+                            .pistonBehavior(PistonBehavior.DESTROY)
+            )
+    );
+    public static final Block SMALL_ECHO_BUD = registerBlock("small_echo_bud",
+            new AmethystClusterBlock(
+                    3.0F,
+                    4.0F,
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.BLACK)
+                            .solid()
+                            .nonOpaque()
+                            .requiresTool()
+                            .strength(1.5F)
+                            .luminance(state -> 1)
+                            .sounds(BlockSoundGroup.SMALL_AMETHYST_BUD)
+                            .pistonBehavior(PistonBehavior.DESTROY)
+            )
+    );
+    public static final Block MEDIUM_ECHO_BUD = registerBlock("medium_echo_bud",
+            new AmethystClusterBlock(
+                    4.0F,
+                    3.0F,
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.BLACK)
+                            .solid()
+                            .nonOpaque()
+                            .requiresTool()
+                            .strength(1.5F)
+                            .luminance(state -> 2)
+                            .sounds(BlockSoundGroup.MEDIUM_AMETHYST_BUD)
+                            .pistonBehavior(PistonBehavior.DESTROY)
+            )
+    );
+    public static final Block LARGE_ECHO_BUD = registerBlock("large_echo_bud",
+            new AmethystClusterBlock(
+                    5.0F,
+                    3.0F,
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.BLACK)
+                            .solid()
+                            .nonOpaque()
+                            .requiresTool()
+                            .strength(1.5F)
+                            .luminance(state -> 4)
+                            .sounds(BlockSoundGroup.LARGE_AMETHYST_BUD)
+                            .pistonBehavior(PistonBehavior.DESTROY)
+            )
     );
 
     private static Block registerBlock(String name, Block block) {
@@ -61,8 +123,10 @@ public class SculkBlocks {
     public static void registerSculkBlocks() {
         SculkEvolution.LOGGER.info("Registering Mod Blocks for " + SculkEvolution.MOD_ID);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries ->
-                entries.addAfter(Blocks.VAULT, UMBRA_VAULT)
-        );
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
+            entries.addAfter(Blocks.VAULT, UMBRA_VAULT);
+            entries.addAfter(Blocks.INFESTED_DEEPSLATE, CALIBRATED_SCULK_CATALYST,
+                    SMALL_ECHO_BUD, MEDIUM_ECHO_BUD, LARGE_ECHO_BUD, ECHO_CLUSTER);
+        });
     }
 }

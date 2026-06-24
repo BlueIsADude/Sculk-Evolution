@@ -11,6 +11,10 @@
     {
       "id": "minecraft:outside_border",
       "required": false
+    },
+    {
+      "id": "moleorigin:sonic_backfire",
+      "required": false
     }
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:sculk_catalyst"
+    },
+    "O": {
+      "item": "minecraft:echo_shard"
+    },
+    "X": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "pattern": [
+    " O ",
+    "X#X",
+    " X "
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculkevolution:calibrated_sculk_catalyst"
+  }
+}

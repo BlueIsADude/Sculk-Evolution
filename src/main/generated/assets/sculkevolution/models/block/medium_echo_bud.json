@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "sculkevolution:block/medium_echo_bud"
+  }
+}

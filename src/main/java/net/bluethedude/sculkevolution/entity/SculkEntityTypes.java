@@ -33,7 +33,7 @@ public class SculkEntityTypes {
     public static final EntityType<EchomiteEntity> ECHOMITE = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(SculkEvolution.MOD_ID, "echomite"),
             EntityType.Builder.create(EchomiteEntity::new, SpawnGroup.MONSTER)
-                    .dimensions(0.4F, 0.3F)
+                    .dimensions(0.5F, 0.3F)
                     .eyeHeight(0.13F)
                     .passengerAttachments(0.2375F)
                     .maxTrackingRange(8)
